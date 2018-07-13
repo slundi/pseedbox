@@ -30,7 +30,7 @@ class SCGITransport(xmlrpc.client.Transport):
             
             self.verbose = verbose
             
-            sock.send(request_body)
+            sock.send(request_body.encode())
             return self.parse_response(sock.makefile())
         finally:
             if sock:
@@ -65,20 +65,22 @@ class SCGIServerProxy(xmlrpc.client.ServerProxy):
         type = u.scheme
         uri = u.request_uri
         host = u.host
+        port = u.port
         #print(u, type, uri)
         #type, uri = urllib3.splittype(uri)
         if type not in ('scgi'):
             raise IOError('unsupported XML-RPC protocol')
         #self.__host, self.__handler = urllib3.splithost(uri)
-        self.__host = host
+        self.__host = host + ':' + str(port)
+        #self.__port = port
         self.__handler = uri #TODO: CHECK ME
         if not self.__handler:
             self.__handler = '/'
         
         if transport is None:
             transport = SCGITransport(use_datetime=use_datetime)
+        transport.set_port = u.port
         self.__transport = transport
-        
         self.__encoding = encoding
         self.__verbose = verbose
         self.__allow_none = allow_none
@@ -91,10 +93,8 @@ class SCGIServerProxy(xmlrpc.client.ServerProxy):
     
         request = xmlrpc.client.dumps(params, methodname, encoding=self.__encoding, allow_none=self.__allow_none)
         response = self.__transport.request(self.__host, self.__handler, request, verbose=self.__verbose)
-    
         if len(response) == 1:
             response = response[0]
-    
         return response
     
     def __repr__(self):
@@ -120,7 +120,7 @@ class SCGIServerProxy(xmlrpc.client.ServerProxy):
         raise AttributeError("Attribute %r not found" % (attr,))
 
 def main():
-    server = SCGIServerProxy('scgi://127.0.0.1:5000/')
+    server = SCGIServerProxy('scgi://127.0.0.1:5000')
     print(server.system.listMethods())
 
 if __name__ == "__main__":
