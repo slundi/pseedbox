@@ -1,10 +1,12 @@
 from flask import Flask, render_template
 from flask_socketio import SocketIO
+from flask_babel import Babel
 import os
 import config
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path = "", static_folder = "static")
 app.config['SECRET_KEY'] = config.SECRET_KEY
+babel = Babel(app)
 socketio = SocketIO(app)
 
 if __name__ == '__main__':
