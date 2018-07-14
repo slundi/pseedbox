@@ -49,7 +49,7 @@ class File(Model):
     path = CharField()
     size = BigIntegerField()
     completed = BooleanField(default = False)
-    mediainfo = TextField()
+    mediainfo = TextField() #JSON
     torrent = ForeignKeyField(Torrent, backref='files')
 
     class Meta:
