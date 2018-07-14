@@ -1,6 +1,7 @@
 urllib3
 flask
 flask-socketio
+flask_babel
 gevent
 torf
 peewee
