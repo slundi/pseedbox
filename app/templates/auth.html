@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>pSeedbox - {{ _('Authentication') }}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/pure-min.css') }}" />
+</head>
+<body>
+    <form class="pure-form pure-form-stacked" method="POST" action="/auth">
+            <fieldset>
+                    <legend>{{ _('Authentication') }}</legend>
+            
+                    <label for="un">{{ _('Username') }}</label>
+                    <input id="un" placeholder="Username">
+            
+                    <label for="p">{{ _('Password') }}</label>
+                    <input id="p" type="password" placeholder="Password">
+            
+                    <button type="submit" class="pure-button pure-button-primary">{{ _('Sign in') }}</button>
+                </fieldset>
+    </form>
+</body>
+</html>
