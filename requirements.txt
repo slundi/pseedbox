@@ -3,3 +3,4 @@ flask
 flask-socketio
 gevent
 torf
+peewee
