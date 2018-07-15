@@ -1,14 +1,20 @@
-from peewee import *
+from peewee import SqliteDatabase, Model, DoesNotExist
+from peewee import CharField, ForeignKeyField, DateTimeField, BigIntegerField, SmallIntegerField, BooleanField, TextField
 from datetime import date, datetime
 import os
+import config
+from app.modules import strings
 
 db = SqliteDatabase('pseedbox.db')
+db.connect()
 
 def create_db(overwrite = False):
     if overwrite:
         if not os.path.isfile('pseedbox.db'):
             os.remove('pseedbox.db')
         db.create_tables([User, TrackerAccount, Torrent, File])
+        db.commit()
+        db.close()
 
 
 
@@ -19,6 +25,7 @@ class User(Model):
 
     class Meta:
         database = db
+        table_name = 'user'
 
 
 class TrackerAccount(Model):
@@ -29,6 +36,7 @@ class TrackerAccount(Model):
 
     class Meta:
         database = db
+        table_name = 'tracker_account'
 
 
 class Torrent(Model):
@@ -43,6 +51,7 @@ class Torrent(Model):
 
     class Meta:
         database = db
+        table_name = 'torrent'
 
 
 class File(Model):
@@ -54,7 +63,14 @@ class File(Model):
 
     class Meta:
         database = db
+        table_name = 'file'
 
 
 #db.create_tables([User, TrackerAccount, Torrent, File])
 #create_db(True)
+
+def get_user(username, clear_password):
+    try:
+        return User.get(User.username == username, User.password == strings.encode(config.SECRET_KEY, clear_password))
+    except DoesNotExist:
+        return None
