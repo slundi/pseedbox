@@ -6,20 +6,21 @@
 <title>pSeedbox - {{ _('Authentication') }}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/pure-min.css') }}" />
+<link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/main.css') }}" />
 </head>
 <body>
-    <form class="pure-form pure-form-stacked" method="POST" action="/auth">
-            <fieldset>
-                    <legend>{{ _('Authentication') }}</legend>
-            
-                    <label for="un">{{ _('Username') }}</label>
-                    <input id="un" placeholder="Username">
-            
-                    <label for="p">{{ _('Password') }}</label>
-                    <input id="p" type="password" placeholder="Password">
-            
-                    <button type="submit" class="pure-button pure-button-primary">{{ _('Sign in') }}</button>
-                </fieldset>
+    <form class="pure-form pure-form-stacked pure-g rounded" id="login" method="POST" action="/auth">
+        <fieldset class="pure-u-2-5">
+            <legend>{{ _('Authentication') }}</legend>
+    
+            <label for="un">{{ _('Username') }}</label>
+            <input id="un" placeholder="Username">
+    
+            <label for="p">{{ _('Password') }}</label>
+            <input id="p" type="password" placeholder="Password">
+    
+            <button type="submit" class="pure-button pure-button-primary pure-u-1" style="margin-top: 2em;">{{ _('Sign in') }}</button>
+        </fieldset>
     </form>
 </body>
 </html>

@@ -1,0 +1,15 @@
+body {background-color: #afbebe;}
+.rounded {
+    border-radius: 25px;
+    border: 1px solid black;
+}
+#login {
+    padding: 20px; 
+    width: 200px;
+    background-color: aliceblue;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-100px;/* half width*/
+    margin-top:-200px;
+}
