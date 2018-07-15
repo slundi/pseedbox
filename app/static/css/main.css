@@ -3,13 +3,12 @@ body {background-color: #afbebe;}
     border-radius: 25px;
     border: 1px solid black;
 }
-#login {
-    padding: 20px; 
-    width: 200px;
-    background-color: aliceblue;
-    position:absolute;
-    top:50%;
-    left:50%;
-    margin-left:-100px;/* half width*/
-    margin-top:-200px;
+
+.alert-success {
+    background-color: #dff0d8;
+    border-color: #d0e9c6;
+    color: #3c763d;
+    border-radius: .25rem;
+    padding: .75rem 1.25rem;
+    margin: 1em 1em;
 }
