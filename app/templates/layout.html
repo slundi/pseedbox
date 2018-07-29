@@ -7,11 +7,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/pure-min.css') }}" />
 <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/main.css') }}" />
+<script src="{{ url_for('static', filename='js/socketio.js') }}"></script>
+<script src="{{ url_for('static', filename='js/events.js') }}"></script>
+<script src="{{ url_for('static', filename='js/commands.js') }}"></script>
+<script src="{{ url_for('static', filename='js/ui.js') }}"></script>
 <style>
 
 </style>
 </head>
 <body>
+<div id="top" class="pure-menu pure-menu-horizontal">
+    <a href="javascript:add_torrent_dialog()" class="pure-menu-heading pure-menu-link" title="{{ _('Add a torrent') }}">A</a>
+    <a href="javascript:start_torrent()" class="pure-menu-heading pure-menu-link" title="{{ _('Start a torrent') }}">S</a>
+    <a href="javascript:stop_torrent()" class="pure-menu-heading pure-menu-link" title="{{ _('Stop a torrent') }}">S</a>
+
+    <a href="javascript:manage_feed_dialog()" class="pure-menu-heading pure-menu-link" title="{{ _('Manage feeds') }}">RSS</a>
+    <a href="javascript:manage_premium_account_dialog()" class="pure-menu-heading pure-menu-link" title="{{ _('Manage premium accounts') }}">RSS</a>
+
+    <span class="pure-menu-heading" title="{{ _('Download speed') }}" id="download_speed">0 {{_('Kos')}} </span>
+    <span class="pure-menu-heading" title="{{ _('Upload speed') }}" id="upload_speed">0 {{_('Kos')}} </span>
+    <span class="pure-menu-heading" title="{{ _('Disk usage') }}" id="disk_usage">200 {{_('GB')}} / 500 {{_('GB')}} </span>
+
+    <a href="{{ url_for('logout') }}" class="pure-menu-heading pure-menu-link" title="{{ _('Logout') }}">X</a>
+</div>
 
 </body>
 </html>
