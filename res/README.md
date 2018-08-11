@@ -1,0 +1,1 @@
+Use https://icomoon.io to generate a font from SVG

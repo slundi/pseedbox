@@ -1,0 +1,107 @@
+@font-face {
+  font-family: 'ico';
+  src:  url('fonts/ui.eot?y6bjs6');
+  src:  url('fonts/ui.eot?y6bjs6#iefix') format('embedded-opentype'),
+    url('fonts/ui.ttf?y6bjs6') format('truetype'),
+    url('fonts/ui.woff?y6bjs6') format('woff'),
+    url('fonts/ui.svg?y6bjs6#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'ico' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-add:before {
+  content: "\e900";
+}
+.icon-chat:before {
+  content: "\e901";
+}
+.icon-chat-new-message:before {
+  content: "\e902";
+}
+.icon-discord:before {
+  content: "\e903";
+}
+.icon-donate:before {
+  content: "\e904";
+}
+.icon-download:before {
+  content: "\e905";
+}
+.icon-download-file:before {
+  content: "\e906";
+}
+.icon-feed:before {
+  content: "\e907";
+}
+.icon-github:before {
+  content: "\e908";
+}
+.icon-hdd:before {
+  content: "\e909";
+}
+.icon-lock-0:before {
+  content: "\e90a";
+}
+.icon-lock-1:before {
+  content: "\e90b";
+}
+.icon-imdb:before {
+  content: "\e90c";
+}
+.icon-lock:before {
+  content: "\e90d";
+}
+.icon-log-out:before {
+  content: "\e90e";
+}
+.icon-premium-1:before {
+  content: "\e90f";
+}
+.icon-remove:before {
+  content: "\e910";
+}
+.icon-sign-in:before {
+  content: "\e911";
+}
+.icon-sign-out:before {
+  content: "\e912";
+}
+.icon-start:before {
+  content: "\e913";
+}
+.icon-stop:before {
+  content: "\e914";
+}
+.icon-tag:before {
+  content: "\e915";
+}
+.icon-tags:before {
+  content: "\e916";
+}
+.icon-upload:before {
+  content: "\e917";
+}
+.icon-user:before {
+  content: "\e918";
+}
+.icon-user-edit:before {
+  content: "\e919";
+}
+.icon-users:before {
+  content: "\e91a";
+}
