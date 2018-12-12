@@ -9,7 +9,7 @@ app.config['SECRET_KEY'] = config.SECRET_KEY
 babel = Babel(app)
 socketio = SocketIO(app)
 
-#i18n & l10n
+# Start of i18n & l10n section
 @babel.localeselector
 def get_locale():
     return request.accept_languages.best_match(config.LANGUAGES.keys())
@@ -19,5 +19,6 @@ def get_timezone():
     user = getattr(g, 'user', None)
     if user is not None:
         return user.timezone
+### End of i18n & l10n section
 
 from . import views

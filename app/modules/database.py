@@ -69,8 +69,8 @@ class File(Model):
 #db.create_tables([User, TrackerAccount, Torrent, File])
 #create_db(True)
 
-def get_user(username, clear_password):
+def get_user(username, md5_password):
     try:
-        return User.get(User.username == username, User.password == strings.encode(config.SECRET_KEY, clear_password))
+        return User.get(User.username == username, User.password == md5_password)
     except DoesNotExist:
         return None
