@@ -7,11 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/pure-min.css') }}" />
 <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/main.css') }}" />
+<link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='theme/default.css') }}" />
 <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/icons-ui.css') }}" />
-<script src="{{ url_for('static', filename='js/socketio.js') }}"></script>
-<script src="{{ url_for('static', filename='js/events.js') }}"></script>
-<script src="{{ url_for('static', filename='js/commands.js') }}"></script>
-<script src="{{ url_for('static', filename='js/ui.js') }}"></script>
 <style>
 
 </style>
@@ -38,6 +35,49 @@
         </ul>
     </li>
 </div>
+<div id="torrent_list" ondrop="add_torrent_dialog()"  ondragover="add_torrent_dialog()" style="width: 100%; position: absolute; top: 50px; bottom: 0; overflow: auto;">
+<form class="my-form"><input type="file" id="fileElem" multiple="multiple" accept="application/x-bittorrent" onchange="handleFiles(this.files)" />
 
+</form></div>
+<script src="{{ url_for('static', filename='js/socketio.js') }}"></script>
+<script src="{{ url_for('static', filename='js/events.js') }}"></script>
+<script src="{{ url_for('static', filename='js/commands.js') }}"></script>
+<script src="{{ url_for('static', filename='js/ui.js') }}"></script>
+<script>
+const torrent_list = document.getElementById('torrent_list')
+function decorate_torrent_list(e) {
+    torrent_list.style="border: 1px dashed black;";
+}
+function undecorate_torrent_list(e) {
+    torrent_list.style="border: 0px;";
+}
+
+//https://www.smashingmagazine.com/2018/01/drag-drop-file-uploader-vanilla-js/
+torrent_list.addEventListener("dragover", decorate_torrent_list, false);
+torrent_list.addEventListener("dragenter", decorate_torrent_list, false);
+torrent_list.addEventListener("dragleave", decorate_torrent_list, false);
+torrent_list.addEventListener("drop", add_torrent_dialog, false);
+function handleFiles(files) {
+  ([...files]).forEach(uploadFile);
+}
+function uploadFile(file) {
+  var url = 'YOUR URL HERE'
+  var xhr = new XMLHttpRequest()
+  var formData = new FormData()
+  xhr.open('POST', url, true)
+
+  xhr.addEventListener('readystatechange', function(e) {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      // Done. Inform the user
+    }
+    else if (xhr.readyState == 4 && xhr.status != 200) {
+      // Error. Inform the user
+    }
+  })
+
+  formData.append('file', file)
+  xhr.send(formData)
+}
+</script>
 </body>
 </html>

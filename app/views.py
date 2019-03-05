@@ -1,4 +1,4 @@
-from flask import request, session, render_template, redirect, url_for, make_response, send_from_directory
+from flask import request, session, render_template, redirect, url_for, make_response, send_from_directory, abort
 from app import app, socketio
 import app.modules.database as db
 from app.modules import strings
@@ -36,7 +36,12 @@ def index():
 @app.route('/logout')
 def logout():
     # remove the username from the session if it's there
-    #TODO: redirect to error 401 to logout from basic auth
     session.pop('user', None)
-    return render_template('logout.html')
+    #redirect to error 401 to logout from basic auth
+    abort(401)
+    return redirect('/', code=401)
 
+@app.errorhandler(401)
+def error_401_unauthorized(error):
+    print("401")
+    return render_template('logout.html'), 401
