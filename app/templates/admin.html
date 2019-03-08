@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>pSeedbox - {{ _('Admin panel') }}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/pure-min.css') }}" />
+<link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/main.css') }}" />
+<link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='theme/default.css') }}" />
+</head>
+<body>
+<h1>Admin panel</h1>
+<h2>Interface</h2>
+Show user names
+Filter order: STATUS CATEGORIES TRACKERS USERS
+Confirm torrent deletion, Minimum ratio, Minimum time, Disable for public trackers, Completed torrent only, Ignore if disk space < X %/Gb
+Normal users can stop admin torrents
+
+Allow torrent creation
+Date format
+UI refresh time
+Request timeout
+<table class="pure-table pure-table-horizontal">
+    <thead>
+        <tr><th>{{ _('Admin panel') }}</th><th>Make</th><th>Model</th><th>Year</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>1</td><td>Honda</td><td>Accord</td><td>2009</td></tr>
+    </tbody>
+</table>
+<h2>Network settings</h2>
+<h3>Transfer</h3>
+Upload slots
+Minimum clients
+Maximum clients
+Minimum sources
+Maximum sources
+<h3>Connections</h3>
+<h3>Scheduler</h3>
+<h2>BitTorrent settings</h2>
+Enable DHT, DHT port, Enable client exchange, IP/host
+Retracker (add following URLs, add following URLs at first of the list, remove following URLs)
+Check hash after completed download
+<h2>Users</h2>
+Add/edit/delete
+Paiement management (if you share a server with friends)
+<h2>Services</h2>
+WebDAV + virtual FS
+Scrapper (IMDB/TMDB, thetvdb, for audio, ...)
+Enable RSS feed
+<h2>Misc</h2>
+Download folder
+</body>
+</html>

@@ -33,6 +33,11 @@ def index():
     print('Logged user is', session['username'])
     return render_template('layout.html')
 
+@app.route('/admin')
+@auth.login_required
+def admin():
+    return render_template('admin.html')
+
 @app.route('/logout')
 def logout():
     # remove the username from the session if it's there
