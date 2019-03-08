@@ -12,6 +12,6 @@
 </head>
 <body>
 <div class="alert-success">{{ _('You are successfully logged out!') }}</div>
-<div style="text-align: center">{{ _('Redirect in 5 seconds to the') }} <a href="/">{{ _('login page') }}</a>...</div>
+<div style="text-align: center">{{ _('Redirect in 5 seconds to the') }} <a href="{{ url_for('index') }}">{{ _('login page') }}</a>...</div>
 </body>
 </html>
