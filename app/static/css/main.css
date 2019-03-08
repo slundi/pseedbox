@@ -1,3 +1,53 @@
+/* Global stuffs */
+body {
+    height: 100%;
+    overflow: hidden;
+    background-color: #E9EEF2;
+    display: flex;
+    flex-direction: row;
+}
+.vertical_separator {
+    border-right:1px #ff0000;    /* line 1 pixel width, length of "Some content" */
+    height: 48px;
+}
+/* Top bar and left menu */
+#top, #left {
+    background-color: #1D2938;
+    color: #526780;
+}
+
+#left {
+    height:100vh;
+    width: 256px;
+}
+
+#top {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 48px;
+    font-size: 24px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/* Buttons & links */
+#top a {
+    padding: 0px 2px;
+}
+
+a {
+    text-decoration: none;
+    color: darkslateblue;
+    opacity: 0.64;
+    filter: alpha(opacity=40);
+}
+
+a:hover {
+    opacity: 1;
+    filter: alpha(opacity=40);
+}
+
 .rounded {
     border-radius: 25px;
     border: 1px solid black;
@@ -12,7 +62,26 @@
     margin: 1em 1em;
 }
 
-#top {
-    background-color: #212729;
-    color: #d6cecc;
+/* Bloc configuration */
+#download, #upload {
+    height: 7em;
+}
+#download .speed, #upload .speed {
+    font-size: 2.5em;
+}
+#download .settings, #upload .settings {
+    float:right;
+    margin: 16px 16px 0 0;
+    font-size: 1.2em;
+}
+#download .overall, #upload .overall {
+    margin-left: 2.2em;
+}
+#download {
+    color: #29AE6C;
+    border-bottom: 1px dashed #29AE6C;
+}
+#upload {
+    color: #2287DA;
+    border-bottom: 1px dashed #2287DA;
 }

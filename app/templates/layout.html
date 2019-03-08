@@ -9,36 +9,113 @@
 <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/main.css') }}" />
 <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='theme/default.css') }}" />
 <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/icons-ui.css') }}" />
+<link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/categories-ui.css') }}" />
 <style>
 
 </style>
 </head>
 <body>
-<div id="top" class="pure-menu pure-menu-horizontal">
-    <a href="javascript:add_torrent_dialog()" class="pure-menu-heading pure-menu-link" title="{{ _('Add a torrent') }}"><span class="icon-add"></span></a>
-    <a href="javascript:start_torrent()" class="pure-menu-heading pure-menu-link" title="{{ _('Start a torrent') }}"><span class="icon-start"></span></a>
-    <a href="javascript:stop_torrent()" class="pure-menu-heading pure-menu-link" title="{{ _('Stop a torrent') }}"><span class="icon-stop"></span></a>
+<div id="left">
+  <div id="download">
+    <div class="settings"><!-- ADMIN ONLY --><a href="javascript:set_global_download_speed()"><span class="ui-levels-h"></span></a></div>
+    <div class="current"><span class="speed"><span class="ui-arrow-down"></span> <strong id="current_download">0</strong></span> KB/s</div>
+    <div class="overall"><span class="ui-cloud-download"></span> <strong id="total_downloaded">17</strong> <small>GB downloaded</small></div>
+    <!-- graph in background -->
+  </div>
+  <div id="upload">
+    <div class="settings"><!-- ADMIN ONLY --><a href="javascript:set_global_upload_speed()"><span class="ui-levels-h"></span></a></div>
+    <div class="current"><span class="speed"><span class="ui-arrow-down"></span> <strong id="current_upload">17</strong></span> KB/s</div>
+    <div class="overall"><span class="ui-cloud-upload"></span> <strong id="total_uploaded">186</strong> <small>GB uploaded</small></div>
+    <!-- graph in background -->
+  </div>
+  <div id="filters">
+    
+  </div>
 
-    <a href="javascript:manage_feed_dialog()" class="pure-menu-heading pure-menu-link" title="{{ _('Manage feeds') }}"><span class="icon-feed"></span></a>
-    <a href="javascript:manage_premium_account_dialog()" class="pure-menu-heading pure-menu-link" title="{{ _('Manage premium accounts') }}"><span class="icon-premium-1"></span></a>
+  <div class="list">
+    <ul id="by_status">
+    <li>Filter by status <span class="badge">count badge</span></li>
+    </ul>
+  </div>
+
+  <div class="list">
+    <ul id="by_category">
+    <li>Filter by category <span class="badge">count badge</span></li>
+    </ul>
+  </div>
+
+  <div class="list">
+    <ul id="by_tracker">
+    <li>Filter by tracker <span class="badge">count badge</span></li>
+    </ul>
+  </div>
+
+  <div class="list">
+  CONFIG MODE : HIDDEN / ME_AND_OTHERS / SHOW (always displayed for admins)
+    <ul id="by_user">
+    <li>Filter by users count badge + size</li>
+    </ul>
+  </div>
+</div>
+<!--/*
+<div>
+    <a href="javascript:manage_feed_dialog()" class="button" title="{{ _('Manage feeds') }}"><span class="icon-feed"></span></a>
+    <a href="javascript:manage_premium_account_dialog()" class="button" title="{{ _('Manage premium accounts') }}"><span class="icon-premium-1"></span></a>
 
     <span class="pure-menu-heading" title="{{ _('Download speed') }}" id="download_speed"><span class="icon-download"></span> 0 {{_('Kos')}} </span>
     <span class="pure-menu-heading" title="{{ _('Upload speed') }}" id="upload_speed"><span class="icon-upload"></span> 0 {{_('Kos')}} </span>
     <span class="pure-menu-heading" title="{{ _('Disk usage') }}" id="disk_usage"><span class="icon-hdd"></span> 200 {{_('GB')}} / 500 {{_('GB')}} </span>
 
-    <!-- User menu -->
     <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover" style="float: right; margin-right: 3em;">
         <a href="#" id="usermenu" class="pure-menu-link"><span class="icon-user"></span> {{ session['username'] }}</a>
         <ul class="pure-menu-children">
                 <li class="pure-menu-item"><a href="javascript:edit_profile()" class="pure-menu-link"><span class="icon-user-edit"></span> {{ _('Edit profile') }}</a></li>
-                <li class="pure-menu-item"><a href="{{ url_for('logout') }}" class="pure-menu-link"><span class="icon-sign-out"></span> {{ _('Logout') }}</a></li>
+                <li class="pure-menu-item"></li>
         </ul>
     </li>
 </div>
+
 <div id="torrent_list" ondrop="add_torrent_dialog()"  ondragover="add_torrent_dialog()" style="width: 100%; position: absolute; top: 50px; bottom: 0; overflow: auto;">
 <form class="my-form"><input type="file" id="fileElem" multiple="multiple" accept="application/x-bittorrent" onchange="handleFiles(this.files)" />
 
-</form></div>
+
+</form>*/--></div>
+
+<div id="top">
+  <div>
+    <a href="javascript:start_torrent()" class="button" title="{{ _('Start torrent(s)') }}"><span class="ui-start"></span></a>
+    <a href="javascript:pause_torrent()" class="button" title="{{ _('Pause torrent(s)') }}"><span class="ui-pause"></span></a>
+    <a href="javascript:stop_torrent()" class="button" title="{{ _('Stop torrent(s)') }}"><span class="ui-stop"></span></a>
+    <span class="vertical_separator" />
+    <a href="javascript:add_torrent_dialog()" class="button" title="{{ _('Add torrent(s)') }}"><span class="ui-plus"></a>
+    <a href="javascript:remove_torrent()" class="button" title="{{ _('Remove torrent(s)') }}"><span class="ui-minus"></a>
+    <span class="vertical_separator" />
+    Create <!--(HAMMER ICON ?)-->
+    <span class="vertical_separator" />
+    <span class="sort_by"><label for=""></label><select id="sort_list" onchange="sort(this);">
+      <option value="name">Torrent name</option>
+      <option value="date">Date</option>
+      <option value="size_file">Size</option>
+      <option value="size_uploaded">uploaded data</option>
+      <option value="ratio">Torrent ratio</option>
+      <option value="ratio_daily">Daily ration</option>
+      <option value="ratio_weekly">Weekly ratio</option>
+      <option value="ratio_monthly">Monthly name</option>
+      <option value="sources">Sources</option>
+      <option value="clients">Clients</option>
+    </select></span>
+    <span class="vertical_separator" />
+    <span class="search"><input id="search" placeholder="Search torrents" /><button>SEARCH ICON</button></span>
+  </div>
+  <div>
+    <a href="javascript:add_torrent_dialog()" class="button" title="{{ _('Settings') }}"><span class="ui-cog"></a>
+    <span class="vertical_separator" />
+    ? <!--Help (? or BUOY)-->
+    <span class="vertical_separator" />
+    <a href="{{ url_for('logout') }}" class="button" title="{{ _('Logout') }}"><span class="icon-sign-out"></span></a>
+  </div>
+</div>
+
 <script src="{{ url_for('static', filename='js/socketio.js') }}"></script>
 <script src="{{ url_for('static', filename='js/events.js') }}"></script>
 <script src="{{ url_for('static', filename='js/commands.js') }}"></script>
