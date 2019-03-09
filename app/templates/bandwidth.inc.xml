@@ -1,13 +1,39 @@
-TODO: merge download & upload like flood
+<!-- TODO: merge upload & upload like flood -->
 <div id="download">
-    <div class="settings"><!-- ADMIN ONLY --><a href="javascript:set_global_download_speed()"><span class="ui-levels-h"></span></a></div>
-    <div class="current"><span class="speed"><span class="ui-arrow-down"></span> <strong id="current_download">0</strong></span> KB/s</div>
-    <div class="overall"><span class="ui-cloud-download"></span> <strong id="total_downloaded">17</strong> <small>GB downloaded</small></div>
-    <!-- graph in background -->
+        <div>
+            <span class="current" id="current_download">188.7</span> 
+            <span class="supsub">
+                <sub><a href="javascript:set_global_download_speed()">
+                    <span class="ui-tachometer-alt"></span> 
+                    <span id="download_limit">80 MB/s</span>
+                </a></sub>
+                <sup>kB/s</sup>
+            </span>
+        </div>
+        <div class="overall">
+            <span class="ui-cloud-download"></span> 
+            <span title="{{ _('Total data downloaded') }}" id="total_download">17</span> 
+            <small>GB</small>
+        </div>
 </div>
 <div id="upload">
-    <div class="settings"><!-- ADMIN ONLY --><a href="javascript:set_global_upload_speed()"><span class="ui-levels-h"></span></a></div>
-    <div class="current"><span class="speed"><span class="ui-arrow-down"></span> <strong id="current_upload">17</strong></span> KB/s</div>
-    <div class="overall"><span class="ui-cloud-upload"></span> <strong id="total_uploaded">186</strong> <small>GB uploaded</small></div>
-    <!-- graph in background -->
+        <div>
+            
+            <span class="current" id="current_upload">2.3</span> 
+            <span class="supsub">
+                <sub><a href="javascript:set_global_upload_speed()">
+                    <span class="ui-tachometer-alt"></span> 
+                    <span class="ui-infinity" id="upload_limit"></span>
+                </a></sub>
+                <sup>MB/s</sup>
+            </span>
+        </div>
+        <div class="overall">
+            <span class="ui-cloud-upload"></span> 
+            <span title="{{ _('Total data uploaded') }}" id="total_upload">512.7</span> 
+            <small>GB</small>
+        </div>
 </div>
+<!-- graph in background
+<div id="bandwidth_graph">graph</div>
+-->

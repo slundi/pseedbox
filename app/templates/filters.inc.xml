@@ -1,29 +1,39 @@
-<h4 style="">FILTER BY STATUS <span class="badge">10 | 32.5 GB</span></h4>
+<h4 style="">FILTER BY STATUS</h4>
 <ul id="by_status">
-    <li><span class="ui-asterisk"></span> All</li>
+    <li><span class="ui-asterisk"></span> All <span class="badge">10 | 32.5 GB</span></li>
     <li><span class="ui-downloading"></span> Downloading</li>
     <li><span class="ui-check"></span>Completed</li>
     <li><span class="ui-stop"></span> Stopped</li>
     <li><span class="ui-data-transfer"></span> Active</li>
-    <li><span class="ui-sleep"></span> Inactive</li>
+    <li><span class="ui-moon"></span> Inactive</li>
     <li><span class="ui-exclamation"></span>Error</li>
     <li></li>
 </ul>
 
 <h4 style="">FILTER BY LABEL</h4>
 <ul id="by_category">
-    <li>ICON Filter by label</li>
+    <li><span class="ui-asterisk"></span> All <span class="badge">10 | 32.5 GB</span></li>
+    <li><span class="label-movie"></span> Movies</li>
+    <li><span class="label-tv"></span> TV shows</li>
+    <li><span class="label-book"></span> Books</li>
+    <li><span class="label-music"></span> Music</li>
+    <li><span class="label-software"></span> Software</li>
+    <li>My custom label</li>
 </ul>
 
 <h4 style="">FILTER BY TRACKER</h4>
 <ul id="by_tracker">
-    <li>Filter by tracker</li>
+    <li><span class="ui-asterisk"></span> All <span class="badge">10 | 32.5 GB</span></li>
+    <li>ygg.is <small><span class="ui-lock"></span></small></li>
+    <li>tracker.wf</li>
 </ul>
 
 <h4 style="">FILTER BY USER</h4>
 <!--CONFIG MODE : HIDDEN / ME_AND_OTHERS / SHOW (always displayed for admins)-->
 <ul id="by_user">
-    <li>My torrents</li>
+    <li>My torrents (User 4)</li>
     <li>Other torrents</li>
-    <li>Filter by users count badge + size</li>
+    <li>User 1</li>
+    <li>User 2</li>
+    <li>User 3</li>
 </ul>

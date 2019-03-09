@@ -1,1 +1,3 @@
-<input id="search" placeholder="Search torrents" /><button>SEARCH ICON</button>
+<span class="ui-search"></span>
+<input id="search" placeholder="Search torrents" autocomplete="off" />
+<a href="#"><span class="ui-eraser"></span></a>
