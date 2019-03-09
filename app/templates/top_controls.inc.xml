@@ -1,0 +1,8 @@
+<a href="javascript:start_torrent()" class="button" title="{{ _('Start torrent(s)') }}"><span class="ui-start"></span></a>
+<a href="javascript:pause_torrent()" class="button" title="{{ _('Pause torrent(s)') }}"><span class="ui-pause"></span></a>
+<a href="javascript:stop_torrent()" class="button" title="{{ _('Stop torrent(s)') }}"><span class="ui-stop"></span></a>
+<span class="vertical_separator" />
+<a href="javascript:shortcut_dialog()" class="button" title="{{ _('Keyboard shortcuts') }}"><span class="ui-keyboard"></span></a>
+<span class="vertical_separator" />
+<a href="javascript:add_torrent_dialog()" class="button" title="{{ _('Add torrent(s)') }}"><span class="ui-plus"></a>
+<a href="javascript:remove_torrent()" class="button" title="{{ _('Remove torrent(s)') }}"><span class="ui-minus"></a>

@@ -1,0 +1,13 @@
+TODO: merge download & upload like flood
+<div id="download">
+    <div class="settings"><!-- ADMIN ONLY --><a href="javascript:set_global_download_speed()"><span class="ui-levels-h"></span></a></div>
+    <div class="current"><span class="speed"><span class="ui-arrow-down"></span> <strong id="current_download">0</strong></span> KB/s</div>
+    <div class="overall"><span class="ui-cloud-download"></span> <strong id="total_downloaded">17</strong> <small>GB downloaded</small></div>
+    <!-- graph in background -->
+</div>
+<div id="upload">
+    <div class="settings"><!-- ADMIN ONLY --><a href="javascript:set_global_upload_speed()"><span class="ui-levels-h"></span></a></div>
+    <div class="current"><span class="speed"><span class="ui-arrow-down"></span> <strong id="current_upload">17</strong></span> KB/s</div>
+    <div class="overall"><span class="ui-cloud-upload"></span> <strong id="total_uploaded">186</strong> <small>GB uploaded</small></div>
+    <!-- graph in background -->
+</div>
