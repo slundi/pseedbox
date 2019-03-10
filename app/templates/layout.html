@@ -8,7 +8,8 @@
 <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/main.css') }}" />
 <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='theme/default.css') }}" />
 <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/icons-ui.css') }}" />
-<link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/categories.css') }}" />
+<link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/icons-categories.css') }}" />
+<link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/icons-indicators.css') }}" />
 <style>
 
 </style>
@@ -16,10 +17,10 @@
 <body>
 <div id="sidenav">
   <div id="top_controls">{% include 'top_controls.inc.xml' %}</div>
-  <div id="system">{% include 'system.inc.xml' %}</div>
   <div id="search_bar">{% include 'search.inc.xml' %}</div>
   <div id="filters">{% include 'filters.inc.xml' %}</div>
   <div id="bandwidth">{% include 'bandwidth.inc.xml' %}</div>
+  <div id="system">{% include 'system.inc.xml' %}</div>
   <div id="bottom_controls">{% include 'bottom_controls.inc.xml' %}</div>
 </div>
 <div id="content">
@@ -44,7 +45,7 @@ content
 
 
 </form>*/--></div>
-<script src="{{ url_for('static', filename='js/socketio.js') }}"></script>
+<script src="{{ url_for('static', filename='js/socketio-min.js') }}"></script>
 <script src="{{ url_for('static', filename='js/events.js') }}"></script>
 <script src="{{ url_for('static', filename='js/commands.js') }}"></script>
 <script src="{{ url_for('static', filename='js/ui.js') }}"></script>

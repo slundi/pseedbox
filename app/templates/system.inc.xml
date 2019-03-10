@@ -1,9 +1,19 @@
-<div>
+<div class="grow">
     <span class="ui-hdd"></span>
+    <div class="progress_bar" title="Disk: 22% - 110GB / 500 GB"><div class="progress" id="hdd" style="width:22%; background-color: navy;"></div></div>
 </div>
-<div>
+<div class="compact">
     <span class="ui-microchip"></span>
+    <span id="cpu" class="indic-progress-0" title="CPU load: 2%"></span>
 </div>
-<div>   
+<div class="compact">   
     <span class="ui-memory"></span>
+    <span id="ram" class="indic-progress-30" title="RAM: 30% - 1.2 GB / 4 GB"></span>
 </div>
+<!-- TODO: color gradient:
+background: #1e5799;
+background: -moz-linear-gradient(top, #1e5799 0%, #00b400 40%, #00b400 40%, #b40000 100%);
+background: -webkit-linear-gradient(top, #1e5799 0%,#00b400 40%,#00b400 40%,#b40000 100%);
+background: linear-gradient(to bottom, #1e5799 0%,#00b400 40%,#00b400 40%,#b40000 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#b40000',GradientType=0 );
+-->

@@ -1,11 +1,15 @@
 /* Global stuffs */
+@font-face {
+    font-family: Delicious; 
+    src: url('Quicksand-light.ttf');
+ }
 body {
     height: 100%;
     overflow: hidden;
     background-color: #E9EEF2;
     display: flex;
     margin: 0;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 .h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5 h6 {color: #34516c}
 .h1,h1 {font-size: 1.375rem; font-weight: 700; margin: 21px 0;}
@@ -80,11 +84,22 @@ ul {list-style: none}
     margin: 4px 7px;
     display: flex;
 }
-#system>div {
-    flex-grow: 1;
+#system .compact {
+    width: 3.2em;
+    text-align: center;
 }
+#system .progress_bar {
+    background-color: rgba(9, 24, 36, 0.171);
+    height: 16px;
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    margin-left: 7px;
+}
+.progress {display: block; height: 100%;}
 
 /* Buttons & links */
+.grow {flex-grow: 1;}
 a {
     text-decoration: none;
     color: darkslateblue;
@@ -115,6 +130,11 @@ a:hover {
 #bandwidth {
     height: 10em;
     display: flex;
+    border: 1px solid rgba(9, 24, 36, .4);
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    background: rgba(9, 24, 36, 0.171);
 }
 #download, #upload {
     flex: 1 1 0;
