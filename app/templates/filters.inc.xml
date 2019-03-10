@@ -1,37 +1,37 @@
-<ul style="margin-top: 7px;"><li><span class="ui-asterisk"></span> All <span class="badge">10 | 32.5 GB</span></li></ul>
+<ul style="margin-top: 7px;"><li onclick="clear_filters()"><span class="ui-asterisk"></span> All <span class="badge">10 | 32.5 GB</span></li></ul>
 <h4 style="">FILTER BY STATUS</h4>
 <ul id="by_status">
-    <li><span class="ui-downloading"></span> Downloading</li>
-    <li><span class="ui-check"></span> Completed</li>
-    <li><span class="ui-stop"></span> Stopped</li>
-    <li><span class="ui-data-transfer"></span> Active</li>
-    <li><span class="ui-moon"></span> Inactive</li>
-    <li><span class="ui-exclamation"></span>Error</li>
-    <li></li>
+    <li onclick="filter_status('downloading')"><span class="ui-downloading"></span> Downloading</li>
+    <li onclick="filter_status('completed')"><span class="ui-check"></span> Completed</li>
+    <li onclick="filter_status('stopped')"><span class="ui-stop"></span> Stopped</li>
+    <li onclick="filter_status('active')"><span class="ui-data-transfer"></span> Active</li>
+    <li onclick="filter_status('inactive')"><span class="ui-moon"></span> Inactive</li>
+    <li onclick="filter_status('error')"><span class="ui-exclamation"></span>Error</li>
+    <li onclick="filter_status('downloading')"></li>
 </ul>
 
 <h4 style="">FILTER BY LABEL</h4>
 <ul id="by_category">
-    <li><span class="label-movie"></span> Movies</li>
-    <li><span class="label-tv"></span> TV shows</li>
-    <li><span class="label-book"></span> Books</li>
-    <li><span class="label-music"></span> Music</li>
-    <li><span class="label-software"></span> Software</li>
-    <li>My custom label</li>
+    <li onclick="filter_label('movie')"><span class="label-movie"></span> Movies</li>
+    <li onclick="filter_label('tv')"><span class="label-tv"></span> TV shows</li>
+    <li onclick="filter_label('book')"><span class="label-book"></span> Books</li>
+    <li onclick="filter_label('music')"><span class="label-music"></span> Music</li>
+    <li onclick="filter_label('software')"><span class="label-software"></span> Software</li>
+    <li onclick="filter_label('My_custom_label')">My_custom_label</li>
 </ul>
 
 <h4 style="">FILTER BY TRACKER</h4>
 <ul id="by_tracker">
-    <li>ygg.is <small><span class="ui-lock"></span></small></li>
-    <li>tracker.wf</li>
+    <li onclick="filter_tracker('ygg.is')">ygg.is <small><span class="ui-lock"></span></small></li>
+    <li onclick="filter_tracker('tracker.wf')">tracker.wf</li>
 </ul>
 
 <h4 style="">FILTER BY USER</h4>
 <ul id="by_user">
-    <li>My torrents (User 4)</li>
-    <li>Other torrents</li>
+    <li onclick="filter_user(true)">My torrents (User_4)</li>
+    <li onclick="filter_user(false)">Other torrents</li>
     <!--Only displayed for admins -->
-    <li>User 1</li>
-    <li>User 2</li>
-    <li>User 3</li>
+    <li onclick="filter_user('User_1')">User_1</li>
+    <li onclick="filter_user('User_2')">User_2</li>
+    <li onclick="filter_user('User_3')">User_3</li>
 </ul>

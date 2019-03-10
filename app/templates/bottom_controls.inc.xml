@@ -1,9 +1,10 @@
 <div>
     <a href="javascript:settings_dialog()" title="{{ _('Settings') }}"><span class="ui-cog"></a>
+    <a href="javascript:show_history()" title="{{ _('Show history') }}"><span class="ui-history"></a>
 </div>
 <div style="flex-grow:1; text-align:center;">
     <a href="javascript:show_explorer()" title="{{ _('Show file explorer') }}"><span class="ui-folder-open"></span></a>
-    <a href="javascript:show_peers()" title="{{ _('Show peers') }}"><span class="ui-network"></span></a>
+    <a href="javascript:show_connections()" title="{{ _('Show peers') }}"><span class="ui-network"></span></a>
     <a href="javascript:create_torrent_dialog()" title="{{ _('Create torrent') }}"><span class="ui-new-file"></a>
     <a href="javascript:manage_feed_dialog()" title="{{ _('Manage feeds') }}"><span class="ui-feed"></span></a>
 </div>
