@@ -128,7 +128,6 @@ a:hover {
 
 /* Bloc configuration */
 #bandwidth {
-    height: 10em;
     display: flex;
     border: 1px solid rgba(9, 24, 36, .4);
     border-left: none;
@@ -141,7 +140,7 @@ a:hover {
     width: 0;
     margin: 5px;
 }
-#bandwidth .current {font-size: 2em;}
+#bandwidth .current {font-size: 1.5em;}
 
 #bandwidth .current small {font-size: 0.48em;}
 #bandwidth .overall {font-size: 0.8em; font-style: italic;}
@@ -150,7 +149,7 @@ a:hover {
 #download {color: #29AE6C;}
 #upload {color: #2287DA;}
 .supsub {position: absolute}
-.supsub sup, .supsub sub {display:block; position:relative; left:5px; top: 3px;}
+.supsub sup, .supsub sub {display:block; position:relative; left:5px; top: -5px;}
 
 #sidenav ul {
     margin-top: -10px;
