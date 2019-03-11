@@ -29,6 +29,9 @@ function show_history() {
 function create_torrent_dialog() {
     
 }
+function close_modal(id) {
+    document.getElementById(id).style.display='none';
+}
 /* Right-click menu */
 function set_global_download_speed() {
 

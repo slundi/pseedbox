@@ -1,15 +1,15 @@
 <!-- https://www.w3schools.com/howto/howto_css_modals.asp -->
-<div class="modal" id="keyboard_shortcuts">
-    <a href="javascript:close_modal('keyboard_shortcuts')"><span class="ui-remove-x"></span></a>
-    <h1>Keyboard shortcuts</h1>
+<div class="modal" id="keyboard_shortcuts"><div class="modal-content">
+    <div class="title"><a href="javascript:close_modal('keyboard_shortcuts')" class="close"><span class="ui-remove-x"></span></a>
+    <h2>Keyboard shortcuts</h2></div>
     <table>
-    <thead><tr><th>Key(s)</th><th>Description</th></tr></thead>
+    <thead><tr><th style="width: 8em;">Key(s)</th><th>Description</th></tr></thead>
     <tbody>
-        <tr><td><kbd>F1</kbd></td>This window</td></tr>
-        <tr><td><kbd>Ctrl</kbd> + <kbd>O</kbd></td>Add torrent(s)</td></tr>
-        <tr><td><kbd>Ctrl</kbd> + <kbd>F</kbd></td>Search torrent (using the search field)</td></tr>
-        <tr><td><kbd>Del</kbd></td>Delete torrent(s)</td></tr>
-        <tr><td><kbd>Shift</kbd> + <kbd>Del</kbd></td>Delete torrent(s)</td></tr>
+        <tr><td><kbd>F1</kbd></td><td>This window</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>O</kbd></td><td>Add torrent(s)</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>F</kbd></td><td>Search torrent (using the search field)</td></tr>
+        <tr><td><kbd>Del</kbd></td><td>Delete torrent(s)</td></tr>
+        <tr><td><kbd>Shift</kbd> + <kbd>Del</kbd></td><td>Delete torrent(s) without confirmation</td></tr>
     </tbody>
     </table>
-</div>
+</div></div>
