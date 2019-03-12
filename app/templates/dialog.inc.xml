@@ -1,4 +1,3 @@
-<!-- https://www.w3schools.com/howto/howto_css_modals.asp -->
 <div class="modal" id="keyboard_shortcuts"><div class="modal-content">
     <div class="title"><a href="javascript:close_modal('keyboard_shortcuts')" class="close"><span class="ui-remove-x"></span></a>
     <h2>Keyboard shortcuts</h2></div>
@@ -11,5 +10,30 @@
         <tr><td><kbd>Del</kbd></td><td>Delete torrent(s)</td></tr>
         <tr><td><kbd>Shift</kbd> + <kbd>Del</kbd></td><td>Delete torrent(s) without confirmation</td></tr>
     </tbody>
+    </table>
+</div></div>
+
+<div class="modal" id="connections"><div class="modal-content">
+    <div class="title"><a href="javascript:close_modal('connections')" class="close"><span class="ui-remove-x"></span></a>
+    <h2>Connections</h2></div>
+    <table style="width:100%;">
+    <thead><tr>
+        <th>Torrents</th>
+        <th style="width: 16em;">Peers</th>
+        <th title="{{ _('Download speed') }}"><span class="ui-cloud-download"></span></th>
+        <th title="{{ _('Upload speed') }}"><span class="ui-cloud-upload"></span></th>
+    </tr></thead>
+    <tbody id="global_peers"><tr>
+            <td>XUbuntu 18.04 LTS</td>
+            <td><img src="{{ url_for('static', filename='images/flags/fr.png') }}" style="height: 1em;" /> 127.0.0.1</td>
+            <td style="width: 6em;" class="download">822.7 <small>kB/s</small></td>
+            <td style="width: 6em;" class="upload">123.5 <small>kB/s</small></td>
+    </tr></tbody>
+    <tfoot><tr>
+        <td></td>
+        <td></td>
+        <td class="download" id="curren_download2"><strong>822.7 <small>kB/s</small></strong></td>
+        <td class="upload" id="curren_upload2"><strong>123.5 <small>kB/s</small></strong></td>
+    </tr></tfoot>
     </table>
 </div></div>

@@ -1,5 +1,5 @@
 <!-- TODO: merge upload & upload like flood -->
-<div id="download">
+<div class="download">
         <div>
             <span class="current" id="current_download">188.7</span> 
             <span class="supsub">
@@ -15,7 +15,7 @@
             <small>GB</small>
         </div>
 </div>
-<div id="upload">
+<div class="upload">
         <div>
             
             <span class="current" id="current_upload">2.3</span> 

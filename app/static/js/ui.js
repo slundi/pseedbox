@@ -2,36 +2,14 @@
 function add_torrent_dialog(e) {
     alert("Add a torrent");
 }
-function manage_feed_dialog() {
-
-}
 function manage_premium_account_dialog() {
     
 }
 function edit_torrent() {
     
 }
-function shortcut_dialog() {
-    document.getElementById('keyboard_shortcuts').style.display='block';
-}
-function settings_dialog() {
-
-}
-function show_explorer() {
-    
-}
-function show_connections() {
-    
-}
-function show_history() {
-    
-}
-function create_torrent_dialog() {
-    
-}
-function close_modal(id) {
-    document.getElementById(id).style.display='none';
-}
+function show_modal(id)  {document.getElementById(id).style.display='block';}
+function close_modal(id) {document.getElementById(id).style.display='none';}
 /* Right-click menu */
 function set_global_download_speed() {
 
