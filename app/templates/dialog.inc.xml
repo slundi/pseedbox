@@ -22,6 +22,7 @@
         <th style="width: 16em;">Peers</th>
         <th title="{{ _('Download speed') }}"><span class="ui-cloud-download"></span></th>
         <th title="{{ _('Upload speed') }}"><span class="ui-cloud-upload"></span></th>
+        <!-- Controls for: starting/pausing/stopping torrent, limit torrent bandwidth? -->
     </tr></thead>
     <tbody id="global_peers"><tr>
             <td>XUbuntu 18.04 LTS</td>
@@ -36,4 +37,41 @@
         <td class="upload" id="curren_upload2"><strong>123.5 <small>kB/s</small></strong></td>
     </tr></tfoot>
     </table>
+</div></div>
+
+<div class="modal" id="settings"><div class="modal-content">
+    <div class="title"><a href="javascript:close_modal('settings')" class="close"><span class="ui-remove-x"></span></a>
+    <h2>Settings</h2></div>
+    <h3>Interface</h3>
+    Color theme
+    Confirm torrent deletion, Minimum ratio, Minimum time, Disable for public trackers, Completed torrent only, Ignore if disk space < X %/Gb
+    Normal users can stop admin torrents
+
+    Allow torrent creation
+    Date format <input name="date_format" id="date_format" />
+    %Y = year 4 digits, %y = year 2 digits, 
+    UI refresh time
+    Request timeout
+    <h3>Network settings</h3>
+    <h4>Transfer</h4>
+    Upload slots
+    Minimum clients
+    Maximum clients
+    Minimum sources
+    Maximum sources
+    <h4>Connections</h4>
+    <h4>Scheduler</h4>
+    <h3>BitTorrent settings</h3>
+    Enable DHT, DHT port, Enable client exchange, IP/host
+    Retracker (add following URLs, add following URLs at first of the list, remove following URLs)
+    Check hash after completed download
+    <h3>Users</h3>
+    Add/edit/delete
+    Paiement management (if you share a server with friends)
+    <h3>Services</h3>
+    WebDAV + virtual FS
+    Scrapper (IMDB/TMDB, thetvdb, for audio, ...)
+    Enable RSS feed
+    <h3>Misc</h3>
+    Download folder
 </div></div>

@@ -200,6 +200,8 @@ a:hover {
     padding: 20px;
     border: 1px solid rgba(9, 24, 36, .4);
     width: 70%;
+    max-height: 50%;
+    overflow: auto;
     border-radius: 8px;
 }
 .modal .title {
@@ -216,4 +218,8 @@ a:hover {
 .close:focus {
   color: black; text-decoration: none;
   cursor: pointer;
+}
+.filter .active {
+    font-weight: bold;
+    color: #1a8be8;
 }

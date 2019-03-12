@@ -1,37 +1,37 @@
-<ul style="margin-top: 7px;"><li onclick="clear_filters()"><span class="ui-asterisk"></span> All <span class="badge">10 | 32.5 GB</span></li></ul>
+<ul style="margin-top: 7px;"><li onclick="clear_filters(false)" id="#filter-all"><span class="ui-asterisk"></span> All <span class="badge">10 | 32.5 GB</span></li></ul>
 <h4 style="">FILTER BY STATUS</h4>
 <ul id="by_status">
-    <li onclick="filter_status('downloading')"><span class="ui-downloading"></span> Downloading</li>
-    <li onclick="filter_status('completed')"><span class="ui-check"></span> Completed</li>
-    <li onclick="filter_status('stopped')"><span class="ui-stop"></span> Stopped</li>
-    <li onclick="filter_status('active')"><span class="ui-data-transfer"></span> Active</li>
-    <li onclick="filter_status('inactive')"><span class="ui-moon"></span> Inactive</li>
-    <li onclick="filter_status('error')"><span class="ui-exclamation"></span>Error</li>
-    <li onclick="filter_status('downloading')"></li>
+    <li class="filter" data-what="status" data-filter="downloading"><span class="ui-downloading"></span> Downloading</li>
+    <li class="filter" data-what="status" data-filter="completed"><span class="ui-check"></span> Completed</li>
+    <li class="filter" data-what="status" data-filter="stopped"><span class="ui-stop"></span> Stopped</li>
+    <li class="filter" data-what="status" data-filter="active"><span class="ui-data-transfer"></span> Active</li>
+    <li class="filter" data-what="status" data-filter="inactive"><span class="ui-moon"></span> Inactive</li>
+    <li class="filter" data-what="status" data-filter="error"><span class="ui-exclamation"></span>Error</li>
+    <li class="filter" data-what="status" data-filter="downloading"></li>
 </ul>
 
 <h4 style="">FILTER BY LABEL</h4>
 <ul id="by_category">
-    <li onclick="filter_label('movie')"><span class="label-movie"></span> Movies</li>
-    <li onclick="filter_label('tv')"><span class="label-tv"></span> TV shows</li>
-    <li onclick="filter_label('book')"><span class="label-book"></span> Books</li>
-    <li onclick="filter_label('music')"><span class="label-music"></span> Music</li>
-    <li onclick="filter_label('software')"><span class="label-software"></span> Software</li>
-    <li onclick="filter_label('My_custom_label')">My_custom_label</li>
+    <li class="filter" data-what="label" data-filter="movie"><span class="label-movie"></span> Movies</li>
+    <li class="filter" data-what="label" data-filter="tv"><span class="label-tv"></span> TV shows</li>
+    <li class="filter" data-what="label" data-filter="book"><span class="label-book"></span> Books</li>
+    <li class="filter" data-what="label" data-filter="music"><span class="label-music"></span> Music</li>
+    <li class="filter" data-what="label" data-filter="software"><span class="label-software"></span> Software</li>
+    <li class="filter" data-what="label" data-filter="My_custom_label">My_custom_label</li>
 </ul>
 
 <h4 style="">FILTER BY TRACKER</h4>
 <ul id="by_tracker">
-    <li onclick="filter_tracker('ygg.is')">ygg.is <small><span class="ui-lock"></span></small></li>
-    <li onclick="filter_tracker('tracker.wf')">tracker.wf</li>
+    <li class="filter" data-what="tracker" data-filter="ygg.is">ygg.is <small><span class="ui-lock"></span></small></li>
+    <li class="filter" data-what="tracker" data-filter="tracker.wf">tracker.wf</li>
 </ul>
 
 <h4 style="">FILTER BY USER</h4>
 <ul id="by_user">
-    <li onclick="filter_user(true)">My torrents (User_4)</li>
-    <li onclick="filter_user(false)">Other torrents</li>
+    <li class="filter" data-what="user" data-filter="true">My torrents (User_4)</li>
+    <li class="filter" data-what="user" data-filter="false">Other torrents</li>
     <!--Only displayed for admins -->
-    <li onclick="filter_user('User_1')">User_1</li>
-    <li onclick="filter_user('User_2')">User_2</li>
-    <li onclick="filter_user('User_3')">User_3</li>
+    <li class="filter" data-what="user" data-filter="User_1">User_1</li>
+    <li class="filter" data-what="user" data-filter="User_2">User_2</li>
+    <li class="filter" data-what="user" data-filter="User_3">User_3</li>
 </ul>
