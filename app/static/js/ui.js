@@ -55,3 +55,8 @@ document.addEventListener('click', function(event) {
         }
     });
 });
+/* Table */
+function resizableThead(id){
+    
+}
+resizableThead('torrents');

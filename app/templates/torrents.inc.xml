@@ -1,0 +1,38 @@
+<table id="torrents">
+<thead><tr>
+    <th>{{ _('Name') }}</th>
+    <th>{{ _('Size') }}</th>
+    <th>% completed</th>
+    <th>{{ _('Downloaded') }}</th>
+    <th title="{{ _('Download speed') }}"><span class="ui-arrow-down"></span> <th>{{ _('Speed') }}</th></th>
+    <th title="{{ _('Remaining') }}">{{ _('ETA') }}</th>
+    <th>{{ _('Uploaded') }}</th>
+    <th title="{{ _('Upload speed') }}"><span class="ui-arrow-down"></span> {{ _('Speed') }}</th>
+    <th>{{ _('Ratio') }}</th>
+    <th>{{ _('Monthly ratio') }}</th>
+    <th>{{ _('Daily ratio') }}</th>
+    <th>{{ _('Added') }}</th>
+    <th>{{ _('Owner') }}</th>
+    <th>{{ _('Sources') }}</th>
+    <th>{{ _('Clients') }}</th>
+</tr></thead>
+<tbody>
+    <tr>
+        <td>XUbuntu 18.04</td>
+        <td>1.2 GB</td>
+        <td>100 %</td>
+        <td>1.2 GB</td>
+        <td></td>
+        <td></td>
+        <td>10.4 GB</td>
+        <td></td>
+        <td>8.667</td>
+        <td>4.2</td>
+        <td>0.2</td>
+        <td>2019-01-01 14:36:21</td>
+        <td>User_1</td>
+        <td>123</td>
+        <td>0</td>
+    </tr>
+</tbody>
+</table>

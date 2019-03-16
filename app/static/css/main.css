@@ -162,6 +162,11 @@ a:hover {
     font-size: 0.8em;
     padding: 2px 0px;
 }
+#content table {border-collapse: collapse;}
+#content thead {
+    font-size: 0.8em;
+    background-color: #fafbfc;
+}
 /* Misc */
 #search_bar {display: flex;}
 #search_bar input {flex-grow: 1;}
