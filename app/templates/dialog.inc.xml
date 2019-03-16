@@ -43,6 +43,7 @@
     <div class="title"><a href="javascript:close_modal('settings')" class="close"><span class="ui-remove-x"></span></a>
     <h2>Settings</h2></div>
     <h3>Interface</h3>
+    Language
     Color theme
     Confirm torrent deletion, Minimum ratio, Minimum time, Disable for public trackers, Completed torrent only, Ignore if disk space < X %/Gb
     Normal users can stop admin torrents
