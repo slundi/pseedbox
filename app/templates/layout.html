@@ -26,7 +26,7 @@
 <div id="content">
 {% include 'torrents.inc.xml' %}
 </div>
-
+{% include 'dialog.inc.xml' %}
 <!--/*
 <div id="torrent_list" ondrop="add_torrent_dialog()"  ondragover="add_torrent_dialog()" style="width: 100%; position: absolute; top: 50px; bottom: 0; overflow: auto;">
 <form class="my-form"><input type="file" id="fileElem" multiple="multiple" accept="application/x-bittorrent" onchange="handleFiles(this.files)" />
@@ -71,6 +71,5 @@ function uploadFile(file) {
   xhr.send(formData)
 }
 </script>
-{% include 'dialog.inc.xml' %}
 </body>
 </html>

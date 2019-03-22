@@ -76,3 +76,29 @@
     <h3>Misc</h3>
     Download folder
 </div></div>
+<div class="modal" id="add_torrent"><div class="modal-content">
+    <div class="title"><a href="javascript:close_modal('add_torrent')" class="close"><span class="ui-remove-x"></span></a>
+    <h2>{{ _('Add torrent_s') }}</h2></div>
+    <table>
+        <tr>
+            <td>From URL(s) <small>1 URL per line</small>
+                <textarea name="urls" id="urls" texholder="{{ _('Paste url_s') }}"></textarea>
+            </td>
+            <td>From file(s)
+                <input type="file" multiple="multiple" name="torrent_file[]" id="files" accept=".torrent,application/x-bittorrent" />
+                List files below
+            </td>
+        </tr><tr>
+            <td colspan="2">
+                Type Video (movie, tv, anime, cartoon, concert, ...), audio (music, ), software (game, windows, linux, mac, apple, android, ...) 
+            </td>
+        </tr></tr><tr>
+            <td colspan="2">
+                Custom label(s)
+            </td>
+        </tr>
+    </table>
+    
+    Start download immediately
+
+</div>

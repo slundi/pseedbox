@@ -1,6 +1,6 @@
 /* Dialogs */
 function add_torrent_dialog(e) {
-    alert("Add a torrent");
+    show_modal('add_torrent');
 }
 function manage_premium_account_dialog() {
     
@@ -40,6 +40,18 @@ function filter_user(u) {
 function search(txt) {
     
 }
+/* Table */
+function resizableThead(id){
+    
+}
+resizableThead('torrents');
+/* Misc */
+function bytesToSize(bytes) {
+    var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+    if (bytes == 0) return '0 Byte';
+    var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
+    return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
+ }
 /* Events */
 document.addEventListener('click', function(event) {
     //close opened modal
@@ -55,8 +67,11 @@ document.addEventListener('click', function(event) {
         }
     });
 });
-/* Table */
-function resizableThead(id){
-    
-}
-resizableThead('torrents');
+document.getElementById('files').addEventListener('change', function(e) {
+    var input=document.getElementById('files');
+    var files=input.files;
+    for(i=0; i<files.length;i++) {
+        console.log(files[i].name);
+        //TODO: list files[i].name (with files[i].size) below input
+    }
+});
