@@ -15,7 +15,7 @@
 </style>
 </head>
 <body>
-<div id="sidenav">
+<div id="sidenav" ondrop="drop_torrents(e)">
   <div id="top_controls" oncontextmenu="return false;">{% include 'top_controls.inc.xml' %}</div>
   <div id="search_bar">{% include 'search.inc.xml' %}</div>
   <div id="filters" oncontextmenu="return false;">{% include 'filters.inc.xml' %}</div>
@@ -23,10 +23,11 @@
   <div id="system" oncontextmenu="return false;">{% include 'system.inc.xml' %}</div>
   <div id="bottom_controls" oncontextmenu="return false;">{% include 'bottom_controls.inc.xml' %}</div>
 </div>
-<div id="content">
+<div id="content" ondrop="drop_torrents(e)">
 {% include 'torrents.inc.xml' %}
 </div>
 {% include 'dialog.inc.xml' %}
+{% include 'popup_menu.inc.xml' %}
 <!--/*
 <div id="torrent_list" ondrop="add_torrent_dialog()"  ondragover="add_torrent_dialog()" style="width: 100%; position: absolute; top: 50px; bottom: 0; overflow: auto;">
 <form class="my-form"><input type="file" id="fileElem" multiple="multiple" accept="application/x-bittorrent" onchange="handleFiles(this.files)" />

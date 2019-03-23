@@ -1,0 +1,20 @@
+<div id="menu_columns" class="popup_menu"><ul>
+    <li onclick="hide_column('name')">{{ _('Name') }} <span class="ui toggle-on"></span></li>
+    <li onclick="hide_column('size')">{{ _('Size') }} <span class="ui toggle-on"></span></li>
+    <li onclick="hide_column('completed')">{{ _('Completed') }} <span class="ui toggle-on"></span></li>
+    <li onclick="hide_column('downloaded')">{{ _('Downloaded') }} <span class="ui toggle-on"></span></li>
+    <li onclick="hide_column('download')">{{ _('Download speed') }} <span class="ui toggle-on"></span></li>
+    <li onclick="hide_column('eta')">{{ _('ETA') }} <span class="ui toggle-on"></span></li>
+    <li onclick="hide_column('uploaded')">{{ _('Uploaded') }} <span class="ui toggle-on"></span></li>
+    <li onclick="hide_column('upload')">{{ _('Upload speed') }} <span class="ui toggle-on"></span></li>
+    <li onclick="hide_column('ratio')">{{ _('Ratio') }} <span class="ui toggle-on"></span></li>
+    <li onclick="hide_column('monthly_ratio')">{{ _('Monthly ratio') }} <span class="ui toggle-on"></span></li>
+    <li onclick="hide_column('daily_ratio')">{{ _('Daily ratio') }} <span class="ui toggle-on"></span></li>
+    <li onclick="hide_column('added')">{{ _('Added') }} <span class="ui toggle-on"></span></li>
+    <li onclick="hide_column('owner')">{{ _('Owner') }} <span class="ui toggle-on"></span></li>
+    <li onclick="hide_column('sources')">{{ _('Sources') }} <span class="ui toggle-on"></span></li>
+    <li onclick="hide_column('clients')">{{ _('Clients') }} <span class="ui toggle-on"></span></li>
+</ul></div>
+<div id="menu_torrent" class="popup_menu"><ul>
+
+</ul></div>

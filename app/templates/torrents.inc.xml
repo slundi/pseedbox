@@ -1,20 +1,20 @@
 <table id="torrents">
 <thead><tr>
-    <th>{{ _('Name') }}</th>
-    <th>{{ _('Size') }}</th>
-    <th>% completed</th>
-    <th>{{ _('Downloaded') }}</th>
-    <th title="{{ _('Download speed') }}"><span class="ui-arrow-down"></span> <th>{{ _('Speed') }}</th></th>
-    <th title="{{ _('Remaining') }}">{{ _('ETA') }}</th>
-    <th>{{ _('Uploaded') }}</th>
-    <th title="{{ _('Upload speed') }}"><span class="ui-arrow-down"></span> {{ _('Speed') }}</th>
-    <th>{{ _('Ratio') }}</th>
-    <th>{{ _('Monthly ratio') }}</th>
-    <th>{{ _('Daily ratio') }}</th>
-    <th>{{ _('Added') }}</th>
-    <th>{{ _('Owner') }}</th>
-    <th>{{ _('Sources') }}</th>
-    <th>{{ _('Clients') }}</th>
+    <th class="column_name">{{ _('Name') }}</th>
+    <th class="column_size">{{ _('Size') }}</th>
+    <th class="column_completed">% completed</th>
+    <th class="column_downloaded">{{ _('Downloaded') }}</th>
+    <th class="column_download" title="{{ _('Download speed') }}"><span class="ui-arrow-down"></span> <th>{{ _('Speed') }}</th></th>
+    <th class="column_eta" title="{{ _('Remaining') }}">{{ _('ETA') }}</th>
+    <th class="column_uploaded">{{ _('Uploaded') }}</th>
+    <th class="column_upload" title="{{ _('Upload speed') }}"><span class="ui-arrow-down"></span> {{ _('Speed') }}</th>
+    <th class="column_ratio">{{ _('Ratio') }}</th>
+    <th class="column_monthly_ration">{{ _('Monthly ratio') }}</th>
+    <th class="column_daily_ratio">{{ _('Daily ratio') }}</th>
+    <th class="column_added">{{ _('Added') }}</th>
+    <th class="column_owner">{{ _('Owner') }}</th>
+    <th class="column_sources">{{ _('Sources') }}</th>
+    <th class="column_clients">{{ _('Clients') }}</th>
 </tr></thead>
 <tbody>
     <tr>
