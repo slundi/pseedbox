@@ -6,6 +6,7 @@ import config
 
 app = Flask(__name__, static_url_path = "", static_folder = "static")
 app.config['SECRET_KEY'] = config.SECRET_KEY
+app.config['MAX_CONTENT_LENGTH'] = config.MAX_UPLOAD_SIZE
 babel = Babel(app)
 socketio = SocketIO(app)
 
