@@ -10,6 +10,11 @@ function edit_torrent() {
 }
 function show_modal(id)  {document.getElementById(id).style.display='block';}
 function close_modal(id) {document.getElementById(id).style.display='none';}
+function close_opened_modals() {
+    //close opened modal
+    var modals = document.getElementsByClassName("modal");
+    Array.prototype.forEach.call(modals, function(e){if(e.style.display!='none' && !e.firstChild.contains(event.target)) e.style.display='none';});
+}
 /* Right-click menu */
 function set_global_download_speed() {
 
@@ -54,9 +59,7 @@ function bytesToSize(bytes) {
  }
 /* Events */
 document.addEventListener('click', function(event) {
-    //close opened modal
-    var modals = document.getElementsByClassName("modal");
-    Array.prototype.forEach.call(modals, function(e){if(e.style.display!='none' && !e.firstChild.contains(event.target)) e.style.display='none';});
+    close_opened_modals();
     //filters
     var filters = document.getElementsByClassName("filter");
     Array.prototype.forEach.call(filters, function(e){
@@ -67,6 +70,8 @@ document.addEventListener('click', function(event) {
         }
     });
 });
+document.addEventListener('dragover', function(e){e.preventDefault();});
+document.addEventListener('', function(e){e.preventDefault();e.stopPropagation();});
 document.getElementById('files').addEventListener('change', function(e) {
     var input=document.getElementById('files');
     var files=input.files;
@@ -75,3 +80,18 @@ document.getElementById('files').addEventListener('change', function(e) {
         //TODO: list files[i].name (with files[i].size) below input
     }
 });
+function drop_torrents(e) {
+    console.log('File(s) dropped');
+    // Prevent default behavior (Prevent file from being opened)
+    e.preventDefault();
+    e.stopPropagation();
+}
+document.addEventListener('keydown', function(e) {
+    if(e.keyCode == 112) show_modal('keyboard_shortcuts');
+    if(e.ctrlKey && e.keyCode == 79) show_modal('add_torrent');
+    if(e.ctrlKey && e.keyCode == 70) document.getElementById('search').focus();
+    if(e.keyCode == 46 || e.keyCode == 8) delete_torrent();
+    if(e.shiftKey && e.keyCode == 46) delete_torrent(false);
+    if(e.keyCode == 27) close_opened_modals(); //escape key
+    e.preventDefault();
+}); 
