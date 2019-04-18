@@ -90,15 +90,40 @@
             </td>
         </tr><tr>
             <td colspan="2">
-                Type Video (movie, tv, anime, cartoon, concert, ...), audio (music, ), software (game, windows, linux, mac, apple, android, ...) 
+                <h3>{{ _('Type') }}</h3>
+                <fieldset><legend>{{ _('Video') }}</legend>
+                    <input type="radio" name="type" value="movie" id="add_movie" /> <span class="label-movie"></span> <label for="add_movie">{{ _('Movie') }}</label>
+                    <input type="radio" name="type" value="tv" id="add_tv" /> <span class="label-tv"></span> <label for="add_tv">{{ _('TV show') }}</label>
+                    <input type="radio" name="type" value="cartoon" id="add_cartoon" /> <span class="label-children"></span> <label for="add_cartoon">{{ _('Cartoon') }}</label>
+                    <input type="radio" name="type" value="anime" id="add_anime" /> <span class="label-anime-2"></span> <label for="add_anime">{{ _('Anime') }}</label>
+                    <input type="radio" name="type" value="sport" id="add_sport" /> <span class="label-sport"></span> <label for="add_sport">{{ _('Sport') }}</label>
+                    <input type="radio" name="type" value="documentary" id="add_documentary" /> <span class="label-documentary"></span> <label for="add_documentary">{{ _('Documentary') }}</label>
+                    <input type="radio" name="type" value="adult" id="add_adult" /> <span class="label-breast"></span> <label for="add_adult">{{ _('XXX') }}</label>
+                </fieldset>
+                <fieldset><legend>{{ _('Music') }}</legend>
+                    <input type="radio" name="type" value="music" id="add_music" /> <span class="label-music"></span> <label for="add_music">{{ _('Music') }}</label>
+                    <input type="radio" name="type" value="concert" id="add_concert" /> <span class="label-concert"></span> <label for="add_concert">{{ _('Concert') }}</label>
+                    <input type="radio" name="type" value="karaoke" id="add_karaoke" /> <span class="label-karaoke"></span> <label for="add_karaoke">{{ _('Karaoke') }}</label>
+                    <input type="radio" name="type" value="instrument" id="add_instrument" /> <span class="label-guitar"></span> <label for="add_instrument">{{ _('Tablature-score') }}</label>
+                </fieldset> 
+                <fieldset><legend>{{ _('Book') }}</legend>
+                    <input type="radio" name="type" value="book" id="add_book" /> <span class="label-book"></span> <label for="add_book">{{ _('Book') }}</label>
+                    <input type="radio" name="type" value="audio_book" id="add_audio_book" /> <span class="label-audio-book"></span> <label for="add_audio_book">{{ _('Audio book') }}</label>
+                </fieldset> 
+                <fieldset><legend>{{ _('Software') }}</legend>
+                    <input type="radio" name="type" value="software" id="add_software" /> <span class="label-software"></span> <label for="add_software">{{ _('Software') }}</label>
+                    <input type="radio" name="type" value="windows" id="add_windows" /> <span class="label-windows"></span> <label for="add_windows">Windows</label>
+                    <input type="radio" name="type" value="linux" id="add_linux" /> <span class="label-linux"></span> <label for="add_linux">Linux</label>
+                    <input type="radio" name="type" value="mac" id="add_mac" /> <span class="label-apple"></span> <label for="add_mac">Mac</label>
+                    <input type="radio" name="type" value="game" id="add_game" /> <span class="label-game"></span> <label for="add_game">{{ _('Game') }}<!-- Apple? Android? others?--></label>
+                    <input type="radio" name="type" value="mobile" id="add_mobile" /> <span class="label-mobile"></span> <label for="add_documentary">{{ _('Mobile') }}</label>
+                </fieldset> 
             </td>
-        </tr></tr><tr>
+        </tr><tr>
             <td colspan="2">
-                Custom label(s)
+                <input type="radio" name="type" value="custom" id="add_custom" /> <input name="custom_label" placeholder="{{ _('Custom label') }}" />
             </td>
         </tr>
     </table>
-    
-    Start download immediately
-
-</div>
+    <button><span class="ui-plus"></span> {{ _('Add torrent_s') }}</button>
+</div></div>
