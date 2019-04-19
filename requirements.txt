@@ -1,8 +1,11 @@
 urllib3
 flask
 flask-socketio
-flask_babel
 Flask-BasicAuth
-gevent
+eventlet
 torf
 peewee
+wsgidav
+pymediainfo
+psutil
+#bcoding
