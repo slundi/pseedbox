@@ -87,6 +87,12 @@ function drop_torrents(e) {
     e.stopPropagation();
 }
 document.addEventListener('keydown', function(e) {
+    //ignored keys
+    if(e.target.tagName == 'INPUT' || e.target.tagName == 'SELECT'
+        || (e.keyCode >= 37 && e.keyCode <= 40) //arrow keys 37-40
+        || e.keyCode == 33 || e.keyCode==34 //page up & down 33, 34
+    ) return false;
+    //commands
     if(e.keyCode == 112) show_modal('keyboard_shortcuts');
     if(e.ctrlKey && e.keyCode == 79) show_modal('add_torrent');
     if(e.ctrlKey && e.keyCode == 70) document.getElementById('search').focus();
