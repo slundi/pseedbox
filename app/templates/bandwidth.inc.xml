@@ -11,7 +11,7 @@
         </div>
         <div class="overall">
             <span class="ui-cloud-download"></span> 
-            <span title="{{ _('Total data downloaded') }}" id="total_download">17</span> 
+            <span title="Total data downloaded" id="total_download" data-i18n-title="total_data_downloaded">17</span> 
             <small>GB</small>
         </div>
 </div>
@@ -28,7 +28,7 @@
         </div>
         <div class="overall">
             <span class="ui-cloud-upload"></span> 
-            <span title="{{ _('Total data uploaded') }}" id="total_upload">512.7</span> 
+            <span title="Total data uploaded" id="total_upload" data-i18n-title="total_data_uploaded">512.7</span> 
             <small>GB</small>
         </div>
 </div>

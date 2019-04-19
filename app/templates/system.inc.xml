@@ -1,14 +1,14 @@
 <div class="grow">
-    <span class="ui-hdd"></span>
-    <div class="progress_bar" title="Disk: 22% - 110GB / 500 GB"><div class="progress" id="hdd" style="width:22%; background-color: navy;"></div></div>
+    <span class="ui-hdd" title="Disk usage" data-i18n-title="disk_usage"></span>
+    <div class="progress_bar" title="22% - 110GB / 500 GB"><div class="progress" id="hdd" style="width:22%; background-color: navy;"></div></div>
 </div>
 <div class="compact">
-    <span class="ui-microchip"></span>
-    <span id="cpu" class="indic-progress-0" title="CPU load: 2%"></span>
+    <span class="ui-microchip" title="CPU load"  data-i18n-i18n="cpu_load"></span>
+    <span id="cpu" class="indic-progress-0" title="2%"></span>
 </div>
 <div class="compact">   
-    <span class="ui-memory"></span>
-    <span id="ram" class="indic-progress-30" title="RAM: 30% - 1.2 GB / 4 GB"></span>
+    <span class="ui-memory" title="RAM" data-i18n="ram"></span>
+    <span id="ram" class="indic-progress-30" title="30% - 1.2 GB / 4 GB"></span>
 </div>
 <!-- TODO: color gradient:
 background: #1e5799;

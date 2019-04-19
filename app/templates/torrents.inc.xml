@@ -1,20 +1,20 @@
 <table id="torrents">
 <thead><tr>
-    <th class="column_name">{{ _('Name') }}</th>
-    <th class="column_size">{{ _('Size') }}</th>
-    <th class="column_completed">% completed</th>
-    <th class="column_downloaded">{{ _('Downloaded') }}</th>
-    <th class="column_download" title="{{ _('Download speed') }}"><span class="ui-arrow-down"></span> <th>{{ _('Speed') }}</th></th>
-    <th class="column_eta" title="{{ _('Remaining') }}">{{ _('ETA') }}</th>
-    <th class="column_uploaded">{{ _('Uploaded') }}</th>
-    <th class="column_upload" title="{{ _('Upload speed') }}"><span class="ui-arrow-down"></span> {{ _('Speed') }}</th>
-    <th class="column_ratio">{{ _('Ratio') }}</th>
-    <th class="column_monthly_ration">{{ _('Monthly ratio') }}</th>
-    <th class="column_daily_ratio">{{ _('Daily ratio') }}</th>
-    <th class="column_added">{{ _('Added') }}</th>
-    <th class="column_owner">{{ _('Owner') }}</th>
-    <th class="column_sources">{{ _('Sources') }}</th>
-    <th class="column_clients">{{ _('Clients') }}</th>
+    <th class="column_name" data-i18n="name">Name</th>
+    <th class="column_size" data-i18n="size">Size</th>
+    <th class="column_completed" data-i18n="pc_completed">% completed</th>
+    <th class="column_downloaded" data-i18n="downloaded">Downloaded</th>
+    <th class="column_download" title="Download speed"><span class="ui-arrow-down"></span> Speed</th>
+    <th class="column_eta" title="Remaining" data-i18n="eta" data-i18n-title="remaining">ETA</th>
+    <th class="column_uploaded" data-i18n="uploaded">Uploaded</th>
+    <th class="column_upload" title="Upload speed" data-i18n-title="upload_speed"><span class="ui-arrow-down"></span> Speed</th>
+    <th class="column_ratio" data-i18n="ratio">Ratio</th>
+    <th class="column_monthly_ration" data-i18n="monthly_ratio">Monthly ratio</th>
+    <th class="column_daily_ratio" data-i18n="daily_ratio">Daily ratio</th>
+    <th class="column_added" data-i18n="added">Added</th>
+    <th class="column_owner" data-i18n="owner">Owner</th>
+    <th class="column_sources" data-i18n="sources">Sources</th>
+    <th class="column_clients" data-i18n="clients">Clients</th>
 </tr></thead>
 <tbody>
     <tr>

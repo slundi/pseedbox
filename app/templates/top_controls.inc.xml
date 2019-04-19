@@ -1,9 +1,9 @@
 <div style="flex-grow:1;">
-    <a href="javascript:start_torrent()" title="{{ _('Start torrent(s)') }}"><span class="ui-start"></span></a>
-    <a href="javascript:pause_torrent()" title="{{ _('Pause torrent(s)') }}"><span class="ui-pause"></span></a>
-    <a href="javascript:stop_torrent()" title="{{ _('Stop torrent(s)') }}"><span class="ui-stop"></span></a>
+    <a href="javascript:start_torrent()" title="Start torrent(s)" data-i18n-title="start_torrent_s"><span class="ui-start"></span></a>
+    <a href="javascript:pause_torrent()" title="Pause torrent(s)" data-i18n-title="pause_torrent_s"><span class="ui-pause"></span></a>
+    <a href="javascript:stop_torrent()" title="Stop torrent(s)" data-i18n-title="stop_torrent_s"><span class="ui-stop"></span></a>
 </div>
 <div>
-    <a href="javascript:add_torrent_dialog()" title="{{ _('Add torrent(s)') }}"><span class="ui-plus"></a>
-    <a href="javascript:remove_torrent()" title="{{ _('Remove torrent(s)') }}"><span class="ui-minus"></a>
+    <a href="javascript:add_torrent_dialog()" title="Add torrent(s)" data-i18n-title="add_torrent_s"><span class="ui-plus"></a>
+    <a href="javascript:remove_torrent()" title="Remove torrent(s)" data-i18n-title="remove_torrent_s"><span class="ui-minus"></a>
 </div>

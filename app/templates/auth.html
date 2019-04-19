@@ -23,15 +23,15 @@
 <body>
     <form class="pure-form pure-form-stacked pure-g rounded" id="login" method="POST" action="{{url_for('auth')}}">
         <fieldset class="pure-u-2-5">
-            <legend>{{ _('Authentication') }}</legend>
+            <legend data-i18n="authentification">Authentication</legend>
     
-            <label for="un">{{ _('Username') }}</label>
-            <input id="un" placeholder="{{ _('Username') }}" name="username">
+            <label for="un" data-i18n="username">Username</label>
+            <input id="un" placeholder="Username" name="username" data-i18n-placeholder="Username">
     
-            <label for="p">{{ _('Password') }}</label>
-            <input id="p" type="password" placeholder="{{ _('Password') }}" name="password">
+            <label for="p" data-i18n="password">Password</label>
+            <input id="p" type="password" placeholder="Password" name="password" data-i18n-placeholder="password">
     
-            <button type="submit" class="pure-button pure-button-primary pure-u-1" style="margin-top: 2em;">{{ _('Sign in') }}</button>
+            <button type="submit" class="pure-button pure-button-primary pure-u-1" style="margin-top: 2em;" data-i18n="sign_in">Sign in</button>
         </fieldset>
     </form>
 </body>

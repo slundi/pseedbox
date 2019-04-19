@@ -1,25 +1,25 @@
 <div class="modal" id="keyboard_shortcuts"><div class="modal-content">
     <div class="title"><a href="javascript:close_modal('keyboard_shortcuts')" class="close"><span class="ui-remove-x"></span></a>
-    <h2>Keyboard shortcuts</h2></div>
+    <h2 data-i18n="keyboard_shortcuts">Keyboard shortcuts</h2></div>
     <table>
-    <thead><tr><th style="width: 8em;">Key(s)</th><th>Description</th></tr></thead>
+    <thead><tr><th style="width: 8em;" data-i18n="key_s">Key(s)</th><th data-i18n="description">Description</th></tr></thead>
     <tbody>
-        <tr><td><kbd>F1</kbd></td><td>This window</td></tr>
-        <tr><td><kbd>Ctrl</kbd> + <kbd>O</kbd></td><td>Add torrent(s)</td></tr>
-        <tr><td><kbd>Ctrl</kbd> + <kbd>F</kbd></td><td>Search torrent (using the search field)</td></tr>
-        <tr><td><kbd>Del</kbd></td><td>Delete torrent(s)</td></tr>
-        <tr><td><kbd>Shift</kbd> + <kbd>Del</kbd></td><td>Delete torrent(s) without confirmation</td></tr>
+        <tr><td><kbd>F1</kbd></td><td data-i18n="this_window">This window</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>O</kbd></td><td data-i18n="add_torrent_s">Add torrent(s)</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>F</kbd></td><td data-i18n="search_torrents_using_search_field">Search torrents (using the search field)</td></tr>
+        <tr><td><kbd>Del</kbd></td><td data-i18n="delete_torrent_s">Delete torrent(s)</td></tr>
+        <tr><td><kbd>Shift</kbd> + <kbd>Del</kbd></td><td data-i18n="delete_torrent_s_without_confirmation">Delete torrent(s) without confirmation</td></tr>
     </tbody>
     </table>
 </div></div>
 
 <div class="modal" id="connections"><div class="modal-content">
     <div class="title"><a href="javascript:close_modal('connections')" class="close"><span class="ui-remove-x"></span></a>
-    <h2>Connections</h2></div>
+    <h2 data-i18n="connections">Connections</h2></div>
     <table style="width:100%;">
     <thead><tr>
-        <th>Torrents</th>
-        <th style="width: 16em;">Peers</th>
+        <th data-i18n="torrents">Torrents</th>
+        <th style="width: 16em;" data-i18n="peers">Peers</th>
         <th title="{{ _('Download speed') }}"><span class="ui-cloud-download"></span></th>
         <th title="{{ _('Upload speed') }}"><span class="ui-cloud-upload"></span></th>
         <!-- Controls for: starting/pausing/stopping torrent, limit torrent bandwidth? -->
@@ -41,8 +41,8 @@
 
 <div class="modal" id="settings"><div class="modal-content">
     <div class="title"><a href="javascript:close_modal('settings')" class="close"><span class="ui-remove-x"></span></a>
-    <h2>Settings</h2></div>
-    <h3>Interface</h3>
+    <h2 data-i18n="settings">Settings</h2></div>
+    <h3 data-i18n="gui">Interface</h3>
     Language
     Color theme
     Confirm torrent deletion, Minimum ratio, Minimum time, Disable for public trackers, Completed torrent only, Ignore if disk space < X %/Gb
@@ -53,32 +53,32 @@
     %Y = year 4 digits, %y = year 2 digits, 
     UI refresh time
     Request timeout
-    <h3>Network settings</h3>
-    <h4>Transfer</h4>
+    <h3 data-i18n="network_settings">Network settings</h3>
+    <h4 data-i18n="transfer">Transfer</h4>
     Upload slots
     Minimum clients
     Maximum clients
     Minimum sources
     Maximum sources
-    <h4>Connections</h4>
-    <h4>Scheduler</h4>
-    <h3>BitTorrent settings</h3>
+    <h4 data-i18n="connections">Connections</h4>
+    <h4 data-i18n="scheduler">Scheduler</h4>
+    <h3 data-i18n="bittorrent_settings">BitTorrent settings</h3>
     Enable DHT, DHT port, Enable client exchange, IP/host
     Retracker (add following URLs, add following URLs at first of the list, remove following URLs)
     Check hash after completed download
-    <h3>Users</h3>
+    <h3 data-i18n="users">Users</h3>
     Add/edit/delete
     Paiement management (if you share a server with friends)
-    <h3>Services</h3>
+    <h3 data-i18n="services">Services</h3>
     WebDAV + virtual FS
     Scrapper (IMDB/TMDB, thetvdb, for audio, ...)
     Enable RSS feed
-    <h3>Misc</h3>
+    <h3 data-i18n="misc">Misc</h3>
     Download folder
 </div></div>
 <div class="modal" id="add_torrent"><div class="modal-content">
     <div class="title"><a href="javascript:close_modal('add_torrent')" class="close"><span class="ui-remove-x"></span></a>
-    <h2>{{ _('Add torrent_s') }}</h2></div>
+    <h2 data-i18n="add_torrent_s">Add torrent(s)</h2></div>
     <table>
         <tr>
             <td>From URL(s) <small>1 URL per line</small>
@@ -90,8 +90,8 @@
             </td>
         </tr><tr>
             <td colspan="2">
-                <h3>{{ _('Type') }}</h3>
-                <fieldset><legend>{{ _('Video') }}</legend>
+                <h3 data-i18n="type">Type</h3>
+                <fieldset><legend data-i18n="video">Video</legend>
                     <input type="radio" name="type" value="movie" id="add_movie" /> <span class="label-movie"></span> <label for="add_movie">{{ _('Movie') }}</label>
                     <input type="radio" name="type" value="tv" id="add_tv" /> <span class="label-tv"></span> <label for="add_tv">{{ _('TV show') }}</label>
                     <input type="radio" name="type" value="cartoon" id="add_cartoon" /> <span class="label-children"></span> <label for="add_cartoon">{{ _('Cartoon') }}</label>
@@ -100,17 +100,17 @@
                     <input type="radio" name="type" value="documentary" id="add_documentary" /> <span class="label-documentary"></span> <label for="add_documentary">{{ _('Documentary') }}</label>
                     <input type="radio" name="type" value="adult" id="add_adult" /> <span class="label-breast"></span> <label for="add_adult">{{ _('XXX') }}</label>
                 </fieldset>
-                <fieldset><legend>{{ _('Music') }}</legend>
+                <fieldset><legend data-i18n="music">Music</legend>
                     <input type="radio" name="type" value="music" id="add_music" /> <span class="label-music"></span> <label for="add_music">{{ _('Music') }}</label>
                     <input type="radio" name="type" value="concert" id="add_concert" /> <span class="label-concert"></span> <label for="add_concert">{{ _('Concert') }}</label>
                     <input type="radio" name="type" value="karaoke" id="add_karaoke" /> <span class="label-karaoke"></span> <label for="add_karaoke">{{ _('Karaoke') }}</label>
                     <input type="radio" name="type" value="instrument" id="add_instrument" /> <span class="label-guitar"></span> <label for="add_instrument">{{ _('Tablature-score') }}</label>
                 </fieldset> 
-                <fieldset><legend>{{ _('Book') }}</legend>
+                <fieldset><legend data-i18n="book">Book</legend>
                     <input type="radio" name="type" value="book" id="add_book" /> <span class="label-book"></span> <label for="add_book">{{ _('Book') }}</label>
                     <input type="radio" name="type" value="audio_book" id="add_audio_book" /> <span class="label-audio-book"></span> <label for="add_audio_book">{{ _('Audio book') }}</label>
                 </fieldset> 
-                <fieldset><legend>{{ _('Software') }}</legend>
+                <fieldset><legend data-i18n="software">Software</legend>
                     <input type="radio" name="type" value="software" id="add_software" /> <span class="label-software"></span> <label for="add_software">{{ _('Software') }}</label>
                     <input type="radio" name="type" value="windows" id="add_windows" /> <span class="label-windows"></span> <label for="add_windows">Windows</label>
                     <input type="radio" name="type" value="linux" id="add_linux" /> <span class="label-linux"></span> <label for="add_linux">Linux</label>
@@ -121,7 +121,7 @@
             </td>
         </tr><tr>
             <td colspan="2">
-                <input type="radio" name="type" value="custom" id="add_custom" /> <input name="custom_label" placeholder="{{ _('Custom label') }}" />
+                <input type="radio" name="type" value="custom" id="add_custom" /> <input name="custom_label" placeholder="Custom label" data-i18n-placeholder="custom_label" />
             </td>
         </tr>
     </table>

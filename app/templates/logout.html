@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='theme/default.css') }}" />
 </head>
 <body>
-<div class="alert-success">{{ _('You are successfully logged out!') }}</div>
-<div style="text-align: center">{{ _('Redirect in 5 seconds to the') }} <a href="{{ url_for('index') }}">{{ _('login page') }}</a>...</div>
+<div class="alert-success" data-i18n="logout_successfull">You are successfully logged out!</div>
+<div style="text-align: center">{{ _('Redirect in 5 seconds to the') }} <a href="{{ url_for('index') }}" data-i18n="login_page">login page</a>...</div>
 </body>
 </html>

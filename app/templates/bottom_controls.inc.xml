@@ -1,14 +1,14 @@
 <div>
-    <a href="javascript:show_modal('settings')" title="{{ _('Settings') }}"><span class="ui-cog"></a>
-    <a href="javascript:show_modal('history')" title="{{ _('Show history') }}"><span class="ui-history"></a>
+    <a href="javascript:show_modal('settings')" title="Settings" data-i18n-title="settings"><span class="ui-cog"></a>
+    <a href="javascript:show_modal('history')" title="Show history" data-i18n-title="show_history"><span class="ui-history"></a>
 </div>
 <div style="flex-grow:1; text-align:center;">
-    <a href="javascript:show_modal('explorer')" title="{{ _('Show file explorer') }}"><span class="ui-folder-open"></span></a>
-    <a href="javascript:show_modal('connections')" title="{{ _('Show peers') }}"><span class="ui-network"></span></a>
-    <a href="javascript:show_modal('create_torrent')" title="{{ _('Create torrent') }}"><span class="ui-new-file"></a>
-    <a href="javascript:show_modal('feeds')" title="{{ _('Manage feeds') }}"><span class="ui-feed"></span></a>
+    <a href="javascript:show_modal('explorer')" title="Show file explorer" data-i18n-title="show_file_explorer"><span class="ui-folder-open"></span></a>
+    <a href="javascript:show_modal('connections')" title="Show peers" data-i18n-title="show_peers"><span class="ui-network"></span></a>
+    <a href="javascript:show_modal('create_torrent')" title="Create torrent" data-i18n-title="create_torrent"><span class="ui-new-file"></a>
+    <a href="javascript:show_modal('feeds')" title="Manage feeds" data-i18n-title="manage_feeds"><span class="ui-feed"></span></a>
 </div>
 <div>
-    <a href="javascript:show_modal('keyboard_shortcuts')" title="{{ _('Keyboard shortcuts') }}"><span class="ui-keyboard"></span></a>
-    <a href="{{ url_for('logout') }}" title="{{ _('Logout') }}"><span class="ui-sign-out"></span></a>
+    <a href="javascript:show_modal('keyboard_shortcuts')" title="Keyboard shortcuts" data-i18n-title="keyboard_shortcuts"><span class="ui-keyboard"></span></a>
+    <a href="{{ url_for('logout" title="Logout" data-i18n-title="logout"><span class="ui-sign-out"></span></a>
 </div>
