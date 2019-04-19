@@ -1,4 +1,4 @@
-var socket = undefined;
+var socket = io();
 function connect(url) {socket = io.connect(url);}
 
 function send_torrent(torrent, category, start = true) {
@@ -33,14 +33,3 @@ function create_torrent(path, trackers, infos, source, chunk_size, seed=true, pr
 function limit_download(v) {}
 function limit_upload(v) {}
 function retracker(t, trackers) {}
-
-function update_system_infos(data) {
-    hdd=document.getElementById('hdd');
-    cpu=document.getElementById('cpu');
-    ram=document.getElementById('ram');
-    //TODO: read data, change title attribute & update UI with blue-green-red gradient
-}
-
-function notify(){}
-
-function update_log(data) {}

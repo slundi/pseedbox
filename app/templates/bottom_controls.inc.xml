@@ -10,5 +10,5 @@
 </div>
 <div>
     <a href="javascript:show_modal('keyboard_shortcuts')" title="Keyboard shortcuts" data-i18n-title="keyboard_shortcuts"><span class="ui-keyboard"></span></a>
-    <a href="{{ url_for('logout" title="Logout" data-i18n-title="logout"><span class="ui-sign-out"></span></a>
+    <a href="{{ url_for('logout') }}" title="Logout" data-i18n-title="logout"><span class="ui-sign-out"></span></a>
 </div>
