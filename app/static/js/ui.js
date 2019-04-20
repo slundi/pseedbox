@@ -57,6 +57,22 @@ function bytesToSize(bytes) {
     var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
     return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
  }
+ function change_language(code) {
+    //TODO: load i18n/lang.code.js
+    //process content and title attributes
+    ['span', 'label', 'small', 'h1', 'h2', 'h3', 'h4', 'h5', 'a', 'li', 'ht'].forEach(function(tag){
+        if(tag.hasAttribute('data-i18n')) {
+            l=document.getElementsByTagName(tag);
+            l.forEach(function(e){
+                //TODO: replace keys e.innerHTML=
+            });
+        }
+    });
+    //buttons ?
+    //process placeholder attributes
+    document.getElementsByTagName("input");
+    document.getElementsByTagName("textarea");
+ }
 /* Events */
 document.addEventListener('click', function(event) {
     close_opened_modals();
@@ -88,7 +104,7 @@ function drop_torrents(e) {
 }
 document.addEventListener('keydown', function(e) {
     //ignored keys
-    if(e.target.tagName == 'INPUT' || e.target.tagName == 'SELECT'
+    if(e.target.tagName == 'INPUT' || e.target.tagName == 'SELECT' || e.target.tagName == 'TEXTAREA'
         || (e.keyCode >= 37 && e.keyCode <= 40) //arrow keys 37-40
         || e.keyCode == 33 || e.keyCode==34 //page up & down 33, 34
     ) return false;

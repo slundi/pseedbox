@@ -1,5 +1,6 @@
 from app import socketio, server
 from flask_socketio import send, emit
+from MediaInfo import MediaInfo
 
 ### Torrent commands ###
 @socketio.on('send_torrent')
@@ -69,7 +70,12 @@ def set_file_priority(torrent, file, priority):
     print('set_file_priority')
     server.f.priority.set(file, priority)
     server.d.update_priorities()
-    emit('f:priority', [torrent, priority], broadcast=True)
+    emit('f:priority', [torrent, file, priority], broadcast=True)
+
+@socketio.on('media_info')
+def media_info(torrent, file):
+    print('media_info')
+    emit('f:media_info', [torrent, file, Mediainfo(filename = server.d.get_directory(torrent)+'/'+server.f.get_path(torrent,file)).getInfo()])
 
 ### Server commands ###
 

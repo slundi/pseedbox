@@ -20,8 +20,8 @@
     <thead><tr>
         <th data-i18n="torrents">Torrents</th>
         <th style="width: 16em;" data-i18n="peers">Peers</th>
-        <th title="{{ _('Download speed') }}"><span class="ui-cloud-download"></span></th>
-        <th title="{{ _('Upload speed') }}"><span class="ui-cloud-upload"></span></th>
+        <th title="Download speed" data-i18n-title="download_speed"><span class="ui-cloud-download"></span></th>
+        <th title="Upload speed" data-i18n-title="upload_speed"><span class="ui-cloud-upload"></span></th>
         <!-- Controls for: starting/pausing/stopping torrent, limit torrent bandwidth? -->
     </tr></thead>
     <tbody id="global_peers"><tr>
@@ -42,30 +42,50 @@
 <div class="modal" id="settings"><div class="modal-content">
     <div class="title"><a href="javascript:close_modal('settings')" class="close"><span class="ui-remove-x"></span></a>
     <h2 data-i18n="settings">Settings</h2></div>
-    <h3 data-i18n="gui">Interface</h3>
-    Language
-    Color theme
-    Confirm torrent deletion, Minimum ratio, Minimum time, Disable for public trackers, Completed torrent only, Ignore if disk space < X %/Gb
-    Normal users can stop admin torrents
+    <h3 data-i18n="gui">User interface</h3>
+    <span class="label-software"></span>
+    Language <select name="language" id="language" onChange="change_language(this.value)">
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+    </select>
+    Color theme <select name="theme" id="theme">
+        <option value="default" data-i18n="default">Default</option>
+        <option value="default" disabled="disabled" data-i18n="light">Light</option>
+        <option value="default" disabled="disabled" data-i18n="dark">Dark</option>
+    </select>
+    <input type="checkbox" name="confirm_torrent_deletion" /> Confirm torrent deletion
+    Date format <input name="date_format" id="date_format" /> %Y = year 4 digits, %y = year 2 digits, 
+    <input type="checkbox" name="show_cpu_ram" /> Show CPU and RAM (relevent if pSeedbox runs on the same server as rTorrent)
 
-    Allow torrent creation
-    Date format <input name="date_format" id="date_format" />
-    %Y = year 4 digits, %y = year 2 digits, 
+    Minimum seed ratio <input type="number" name="minimum_ration" min="-1" step="1" />
+    Minimum seed time (in hours) <input type="number" name="minimum_time" min="-1" step="1" />
+    <input type="checkbox" name="disable_for_public_trackers" /> Disable for public trackers
+    <input type="checkbox" name="completed_torrents_only" /> Completed torrents only
+    Ignore if disk space < X %/Gb
+    <input type="checkbox" name="normal_user_can_stop" /> Normal users can stop admin torrents
+
+    <input type="checkbox" name="allow_torrent_creation" /> Allow torrent creation
+    
+    
     UI refresh time
     Request timeout
     <h3 data-i18n="network_settings">Network settings</h3>
     <h4 data-i18n="transfer">Transfer</h4>
-    Upload slots
-    Minimum clients
-    Maximum clients
-    Minimum sources
-    Maximum sources
+    Upload slots <input type="number" name="upload_slots" min="0" step="1" />
+    Download slots <input type="number" name="download_slots" min="0" step="1" />
+    Minimum clients <input type="number" name="minimum_clients" min="0" step="1" />
+    Maximum clients <input type="number" name="maximum_clients" min="0" step="1" />
+    Minimum sources <input type="number" name="minimum_sources" min="0" step="1" />
+    Maximum sources <input type="number" name="maximum_sources" min="0" step="1" />
     <h4 data-i18n="connections">Connections</h4>
     <h4 data-i18n="scheduler">Scheduler</h4>
     <h3 data-i18n="bittorrent_settings">BitTorrent settings</h3>
-    Enable DHT, DHT port, Enable client exchange, IP/host
+    <input type="checkbox" name="dht" /> Enable DHT
+    DHT port
+    <input type="checkbox" name="client_exchange" /> Enable client exchange
+    IP/host
     Retracker (add following URLs, add following URLs at first of the list, remove following URLs)
-    Check hash after completed download
+    <input type="checkbox" name="check_hash" /> Check hash after completed download
     <h3 data-i18n="users">Users</h3>
     Add/edit/delete
     Paiement management (if you share a server with friends)
@@ -74,7 +94,7 @@
     Scrapper (IMDB/TMDB, thetvdb, for audio, ...)
     Enable RSS feed
     <h3 data-i18n="misc">Misc</h3>
-    Download folder
+    Download folder <input name="download_folder"/>
 </div></div>
 <div class="modal" id="add_torrent"><div class="modal-content">
     <div class="title"><a href="javascript:close_modal('add_torrent')" class="close"><span class="ui-remove-x"></span></a>
@@ -82,7 +102,7 @@
     <table>
         <tr>
             <td>From URL(s) <small>1 URL per line</small>
-                <textarea name="urls" id="urls" texholder="{{ _('Paste url_s') }}"></textarea>
+                <textarea name="urls" id="urls" placeholder="Paste url_s" data-i18n-placeholder="paste_url_s"></textarea>
             </td>
             <td>From file(s)
                 <input type="file" multiple="multiple" name="torrent_file[]" id="files" accept=".torrent,application/x-bittorrent" />
@@ -92,31 +112,31 @@
             <td colspan="2">
                 <h3 data-i18n="type">Type</h3>
                 <fieldset><legend data-i18n="video">Video</legend>
-                    <input type="radio" name="type" value="movie" id="add_movie" /> <span class="label-movie"></span> <label for="add_movie">{{ _('Movie') }}</label>
-                    <input type="radio" name="type" value="tv" id="add_tv" /> <span class="label-tv"></span> <label for="add_tv">{{ _('TV show') }}</label>
-                    <input type="radio" name="type" value="cartoon" id="add_cartoon" /> <span class="label-children"></span> <label for="add_cartoon">{{ _('Cartoon') }}</label>
-                    <input type="radio" name="type" value="anime" id="add_anime" /> <span class="label-anime-2"></span> <label for="add_anime">{{ _('Anime') }}</label>
-                    <input type="radio" name="type" value="sport" id="add_sport" /> <span class="label-sport"></span> <label for="add_sport">{{ _('Sport') }}</label>
-                    <input type="radio" name="type" value="documentary" id="add_documentary" /> <span class="label-documentary"></span> <label for="add_documentary">{{ _('Documentary') }}</label>
-                    <input type="radio" name="type" value="adult" id="add_adult" /> <span class="label-breast"></span> <label for="add_adult">{{ _('XXX') }}</label>
+                    <input type="radio" name="type" value="movie" id="add_movie" /> <span class="label-movie"></span> <label for="add_movie">Movie</label>
+                    <input type="radio" name="type" value="tv" id="add_tv" /> <span class="label-tv"></span> <label for="add_tv">TV show</label>
+                    <input type="radio" name="type" value="cartoon" id="add_cartoon" /> <span class="label-children"></span> <label for="add_cartoon">Cartoon</label>
+                    <input type="radio" name="type" value="anime" id="add_anime" /> <span class="label-anime-2"></span> <label for="add_anime">Anime</label>
+                    <input type="radio" name="type" value="sport" id="add_sport" /> <span class="label-sport"></span> <label for="add_sport">Sport</label>
+                    <input type="radio" name="type" value="documentary" id="add_documentary" /> <span class="label-documentary"></span> <label for="add_documentary">Documentary</label>
+                    <input type="radio" name="type" value="adult" id="add_adult" /> <span class="label-breast"></span> <label for="add_adult">XXX</label>
                 </fieldset>
                 <fieldset><legend data-i18n="music">Music</legend>
-                    <input type="radio" name="type" value="music" id="add_music" /> <span class="label-music"></span> <label for="add_music">{{ _('Music') }}</label>
-                    <input type="radio" name="type" value="concert" id="add_concert" /> <span class="label-concert"></span> <label for="add_concert">{{ _('Concert') }}</label>
-                    <input type="radio" name="type" value="karaoke" id="add_karaoke" /> <span class="label-karaoke"></span> <label for="add_karaoke">{{ _('Karaoke') }}</label>
-                    <input type="radio" name="type" value="instrument" id="add_instrument" /> <span class="label-guitar"></span> <label for="add_instrument">{{ _('Tablature-score') }}</label>
+                    <input type="radio" name="type" value="music" id="add_music" /> <span class="label-music"></span> <label for="add_music">Music</label>
+                    <input type="radio" name="type" value="concert" id="add_concert" /> <span class="label-concert"></span> <label for="add_concert">Concert</label>
+                    <input type="radio" name="type" value="karaoke" id="add_karaoke" /> <span class="label-karaoke"></span> <label for="add_karaoke">Karaoke</label>
+                    <input type="radio" name="type" value="instrument" id="add_instrument" /> <span class="label-guitar"></span> <label for="add_instrument">Tablature-score</label>
                 </fieldset> 
                 <fieldset><legend data-i18n="book">Book</legend>
-                    <input type="radio" name="type" value="book" id="add_book" /> <span class="label-book"></span> <label for="add_book">{{ _('Book') }}</label>
-                    <input type="radio" name="type" value="audio_book" id="add_audio_book" /> <span class="label-audio-book"></span> <label for="add_audio_book">{{ _('Audio book') }}</label>
+                    <input type="radio" name="type" value="book" id="add_book" /> <span class="label-book"></span> <label for="add_book">Book</label>
+                    <input type="radio" name="type" value="audio_book" id="add_audio_book" /> <span class="label-audio-book"></span> <label for="add_audio_book">Audio book</label>
                 </fieldset> 
                 <fieldset><legend data-i18n="software">Software</legend>
-                    <input type="radio" name="type" value="software" id="add_software" /> <span class="label-software"></span> <label for="add_software">{{ _('Software') }}</label>
+                    <input type="radio" name="type" value="software" id="add_software" /> <span class="label-software"></span> <label for="add_software">Software</label>
                     <input type="radio" name="type" value="windows" id="add_windows" /> <span class="label-windows"></span> <label for="add_windows">Windows</label>
                     <input type="radio" name="type" value="linux" id="add_linux" /> <span class="label-linux"></span> <label for="add_linux">Linux</label>
                     <input type="radio" name="type" value="mac" id="add_mac" /> <span class="label-apple"></span> <label for="add_mac">Mac</label>
-                    <input type="radio" name="type" value="game" id="add_game" /> <span class="label-game"></span> <label for="add_game">{{ _('Game') }}<!-- Apple? Android? others?--></label>
-                    <input type="radio" name="type" value="mobile" id="add_mobile" /> <span class="label-mobile"></span> <label for="add_documentary">{{ _('Mobile') }}</label>
+                    <input type="radio" name="type" value="game" id="add_game" /> <span class="label-game"></span> <label for="add_game">Game<!-- Apple? Android? others?--></label>
+                    <input type="radio" name="type" value="mobile" id="add_mobile" /> <span class="label-mobile"></span> <label for="add_documentary">Mobile</label>
                 </fieldset> 
             </td>
         </tr><tr>
@@ -125,5 +145,5 @@
             </td>
         </tr>
     </table>
-    <button><span class="ui-plus"></span> {{ _('Add torrent_s') }}</button>
+    <button><span class="ui-plus"></span> Add torrent_s</button>
 </div></div>
