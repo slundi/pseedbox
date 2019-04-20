@@ -2,6 +2,18 @@ from app import socketio, server
 from flask_socketio import send, emit
 from MediaInfo import MediaInfo
 
+### User ###
+@socketio.on('connect')
+def user_connected():
+    print('User connected')
+    #TODO: send torrent list
+    for h in server.download_list():
+        print(h,server.d.get_name(h),'\t',server.d.get_directory(h),server.d.get_free_diskspace(h))
+    emit('t:list', server.download_list())
+@socketio.on('disconnect')
+def user_disconnected():
+    print('User disconnected')
+
 ### Torrent commands ###
 @socketio.on('send_torrent')
 def send_torrent(torrent, category, start = True):

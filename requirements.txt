@@ -9,3 +9,4 @@ wsgidav
 pymediainfo
 psutil
 #bcoding
+MediaInfo
