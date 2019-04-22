@@ -16,7 +16,7 @@
     <th class="column_sources" data-i18n="sources">Sources</th>
     <th class="column_clients" data-i18n="clients">Clients</th>
 </tr></thead>
-<tbody>
+<tbody id="torrent_list">
     <tr>
         <td>XUbuntu 18.04</td>
         <td>1.2 GB</td>

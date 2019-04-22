@@ -1,15 +1,61 @@
-from app import socketio, server
+from app import socketio, server, torrents, config, app
 from flask_socketio import send, emit
 from MediaInfo import MediaInfo
+from app.models import *
+from flask_apscheduler import APScheduler
+import json
+
+#https://docs.python.org/3/library/xmlrpc.client.html
+#https://rtorrent-docs.readthedocs.io/en/latest/cmd-ref.html
+
+### Crons ###
+scheduler = APScheduler()
+scheduler.init_app(app)
+#scheduler.start()
+#scheduler.add_job(refresh_torrents, trigger="interval", seconds=config.TORRENT_LIST_REFRESH_TIME)
+#scheduler.add_job(refresh_speeds, trigger="interval", seconds=config.SPEEDS_REFRESH_TIME)
+
+#@scheduler.task('interval', id='refresh_speeds', seconds=config.SPEEDS_REFRESH_TIME, misfire_grace_time=300)
+def refresh_speeds():
+    print('WS: sending speeds')
+    data=server.d.multicall2('', ('default', 'd.hash=', 'd.size_chunks=', 'd.chunk_size=', 'd.completed_chunks=', \
+                                'd.down.rate=', 'd.down.total=', 'd.up.rate=', 'd.up.total=', 'd.ratio='))
+    emit('t:speeds', json.dumps(data), broadcast=True)
+
+#@scheduler.task('interval', id='refresh_torrents', seconds=config.TORRENT_LIST_REFRESH_TIME, misfire_grace_time=300)
+def refresh_torrents():
+    print('WS: torrent list')
+    data=server.d.multicall2('', ('default', 'd.hash=', 'd.get_directory=', 'd.get_name=', \
+                                'd.size_bytes=', 'd.size_chunks=', 'd.chunk_size=', 'd.completed_chunks=', \
+                                'd.is_multi_file=', 'd.is_private=', 'd.priority=','d.ratio='))
+    torrents.clear()
+    for d in data:
+        t=Torrent(d[0])
+        t.name = d[2]
+        t.size = d[3]
+        t.path = d[1]
+        t.chunks = d[4]
+        t.chunk_size = d[5]
+        t.completed_chunks = d[6]
+        t.multiple_files = d[7]==1
+        t.private = d[8]==1
+        t.proiority = d[9]
+        t.ratio = d[10]
+        torrents.append(t)
+    #print(json.dumps(torrents))
+    refresh_speeds()
+    emit('t:list', json.dumps([t.__dict__ for t in torrents]), broadcast=True)
 
 ### User ###
 @socketio.on('connect')
 def user_connected():
     print('User connected')
+    print(server.view.list())
     #TODO: send torrent list
-    for h in server.download_list():
-        print(h,server.d.get_name(h),'\t',server.d.get_directory(h),server.d.get_free_diskspace(h))
-    emit('t:list', server.download_list())
+    #for h in server.download_list('', ('default')):
+    #    print(h,server.d.get_name(h),'\t',server.d.get_directory(h),server.d.get_free_diskspace(h))
+    #    break
+    refresh_torrents()
 @socketio.on('disconnect')
 def user_disconnected():
     print('User disconnected')
