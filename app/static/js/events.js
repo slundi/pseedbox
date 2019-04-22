@@ -57,3 +57,18 @@ socket.on('t:list', function(data){ //update UI with torrent informations
     });
     tbody.innerHTML=html;
 });
+
+socket.on('t:speeds', function(data){
+    speeds=JSON.parse(data);
+    console.log(torrents);
+    for(i=0;i<speeds.length;i++){
+        let t=torrents.find(x => x.id==speeds[i][0]);
+        var e=document.getElementById(t.id);
+        e.childNodes[4].innerHTML = formatBytes(speeds[i][3]);
+        e.childNodes[5].innerHTML = formatBytes(speeds[i][4]);
+        e.childNodes[6].innerHTML = formatBytes(speeds[i][6]);
+        e.childNodes[7].innerHTML = formatBytes(speeds[i][7]);
+        e.childNodes[8].innerHTML = speeds[i][8];
+        console.log(e.childNodes[4]);
+    }
+});

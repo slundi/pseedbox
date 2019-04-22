@@ -43,22 +43,21 @@ def refresh_torrents():
         t.ratio = d[10]
         torrents.append(t)
     #print(json.dumps(torrents))
-    refresh_speeds()
     emit('t:list', json.dumps([t.__dict__ for t in torrents]), broadcast=True)
+    refresh_speeds()
 
 ### User ###
 @socketio.on('connect')
 def user_connected():
     print('User connected')
-    print(server.view.list())
     #TODO: send torrent list
     #for h in server.download_list('', ('default')):
     #    print(h,server.d.get_name(h),'\t',server.d.get_directory(h),server.d.get_free_diskspace(h))
     #    break
     refresh_torrents()
-@socketio.on('disconnect')
-def user_disconnected():
-    print('User disconnected')
+#@socketio.on('disconnect')
+#def user_disconnected():
+#    print('User disconnected')
 
 ### Torrent commands ###
 @socketio.on('send_torrent')
