@@ -64,11 +64,11 @@ socket.on('t:speeds', function(data){
     for(i=0;i<speeds.length;i++){
         let t=torrents.find(x => x.id==speeds[i][0]);
         var e=document.getElementById(t.id);
-        e.childNodes[4].innerHTML = formatBytes(speeds[i][3]);
-        e.childNodes[5].innerHTML = formatBytes(speeds[i][4]);
+        e.childNodes[2].innerHTML = Math.round(100 * speeds[i][3] / speeds[i][1]) + ' %';
+        e.childNodes[3].innerHTML = (speeds[i][4]==0 || (speeds[i][3]/speeds[i][1])>1)?e.childNodes[1].innerHTML:formatBytes(speeds[i][4]); //downloaded
+        e.childNodes[4].innerHTML = speeds[i][5]>1024?formatBytes(speeds[i][5]):'';
         e.childNodes[6].innerHTML = formatBytes(speeds[i][6]);
-        e.childNodes[7].innerHTML = formatBytes(speeds[i][7]);
-        e.childNodes[8].innerHTML = speeds[i][8];
-        console.log(e.childNodes[4]);
+        e.childNodes[7].innerHTML = speeds[i][7]>1024?formatBytes(speeds[i][7]):'';
+        e.childNodes[8].innerHTML = speeds[i][8]/1000;
     }
 });

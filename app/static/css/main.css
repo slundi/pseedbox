@@ -164,7 +164,7 @@ a:hover {
 }
 #content table {border-collapse: collapse;}
 #content thead {
-    font-size: 0.8em;
+    font-size: 0.72em;
     background-color: #fafbfc;
 }
 /* Misc */
@@ -227,4 +227,17 @@ a:hover {
 .filter .active {
     font-weight: bold;
     color: #1a8be8;
+}
+.popup_menu {
+    display:block;
+    position:fixed;
+    float: left;
+    top: 50%; left: 15%;
+    width: 256px;
+    margin: 0px;
+}
+.popup_menu span {float: right;}
+/*Torrents*/
+#torrents thead {
+    /*position: fixed;*/
 }

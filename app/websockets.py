@@ -19,7 +19,7 @@ scheduler.init_app(app)
 def refresh_speeds():
     print('WS: sending speeds')
     data=server.d.multicall2('', ('default', 'd.hash=', 'd.size_chunks=', 'd.chunk_size=', 'd.completed_chunks=', \
-                                'd.down.rate=', 'd.down.total=', 'd.up.rate=', 'd.up.total=', 'd.ratio='))
+                                'd.down.total=', 'd.down.rate=', 'd.up.total=', 'd.up.rate=', 'd.ratio='))
     emit('t:speeds', json.dumps(data), broadcast=True)
 
 #@scheduler.task('interval', id='refresh_torrents', seconds=config.TORRENT_LIST_REFRESH_TIME, misfire_grace_time=300)

@@ -7,7 +7,7 @@
     <th class="column_download" title="Download speed"><span class="ui-arrow-down"></span> Speed</th>
     <th class="column_eta" title="Remaining" data-i18n="eta" data-i18n-title="remaining">ETA</th>
     <th class="column_uploaded" data-i18n="uploaded">Uploaded</th>
-    <th class="column_upload" title="Upload speed" data-i18n-title="upload_speed"><span class="ui-arrow-down"></span> Speed</th>
+    <th class="column_upload" title="Upload speed" data-i18n-title="upload_speed"><span class="ui-arrow-up"></span> Speed</th>
     <th class="column_ratio" data-i18n="ratio">Ratio</th>
     <th class="column_monthly_ration" data-i18n="monthly_ratio">Monthly ratio</th>
     <th class="column_daily_ratio" data-i18n="daily_ratio">Daily ratio</th>
