@@ -6,7 +6,7 @@ pseedbox is a web user interface for [rTorrent](https://github.com/rakshasa/rtor
 
 ## Roadmap
 
-- Communicate with rTorrent
+- Communicate with rTorrent + UNIX socket support
 - User interface
 - Multiple user account with expiration
 - Add/remove a torrent
